@@ -1,0 +1,59 @@
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 10px;
+  height: 100%;
+}
+
+ul li {
+  display: inline-block;
+}
+
+/* Northern America */
+.ca, .gl, .pm, .us,
+.noram {fill: #544353; background: #544353;}
+
+/*svg {
+  border: 1px solid black;  
+  border-width: 0 0 1px 1px;
+}*/
+ 
+ .button{
+	font-size: 8px;
+}
+
+.WINS
+{fill: #6591ee; background: #6591ee;}
+
+.TIME
+{fill: #6591ee; background: #6591ee;}
+
+.ELIMS
+{fill: #6591ee; background: #6591ee;}
+
+.DAMAGE
+{fill: #6591ee; background: #6591ee;}
+
+.HEALING
+{fill: #6591ee; background: #6591ee;}
+
+.DEATHS
+{fill: #6591ee; background: #6591ee;}
+
+.GOLD
+{fill: #ffd267; background: #ffd267;}
+
+.SILVER
+{fill: #d3d7e7; background: #d3d7e7;}
+
+.BRONZE
+{fill: #6591ee; background: #6591ee;}
+
+.ACCURACY
+{fill: #6591ee; background: #6591ee;}

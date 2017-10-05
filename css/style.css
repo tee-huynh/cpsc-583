@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'CaviarDreams';
-  src: url('fonts/CaviarDreams.ttf');
+  font-family: 'delius';
+  src: url('fonts/deliusunicase-regular.ttf');
 }
 
 @font-face {
@@ -26,12 +26,12 @@
 }
 
 h1 { 
-  color: #FFEBE7; 
-  font-family: 'CaviarDreamsBold'; 
-  font-size: 140px; 
-  font-weight: 300; 
-  line-height: 58px;
-  letter-spacing: 35px;
+  color: black; 
+  font-family: 'delius'; 
+  font-size: 30px; 
+  font-weight: 200; 
+  line-height: 40px;
+  letter-spacing: -2px;
   text-align: center; 
 }
 
