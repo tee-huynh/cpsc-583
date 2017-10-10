@@ -716,7 +716,6 @@
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
         hidden = false;
-        hide = false;
           if(first == true){
             drawBar(dataWins);
           }
@@ -734,7 +733,6 @@
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
         hidden = false;
-        hide = false;
           if(first == true){
             drawBar(dataTime);
           }
@@ -752,7 +750,6 @@
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
          hidden = false;
-         hide = false;
           if(first == true){
             drawBar(dataElim);
           }
@@ -770,7 +767,6 @@
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
                  hidden = false;
-        hide = false;
           if(first == true){
             drawBar(dataDeath);
           }
@@ -788,7 +784,6 @@
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
              hidden = false;
-       hide = false;
           if(first == true){
             drawBar(dataGold);
           }
@@ -806,7 +801,6 @@
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
          hidden = false;
-         hide = false;
           if(first == true){
             drawBar(dataSilver);
           }
@@ -824,7 +818,6 @@
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
              hidden = false;
-        hide = false;
           if(first == true){
             drawBar(dataBronze);
           }
@@ -842,7 +835,6 @@
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
         hidden = false;
-       hide = false;
           if(first == true){
             drawBar(dataAccuracy);
           }
