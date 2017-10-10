@@ -855,7 +855,7 @@
 
         svg.append("g")
                 .attr("class", "x axis")
-                .attr("transform", "translate(0," + (height - (margin.top/8)) + ")")
+                .attr("transform", "translate(0," + (height - (margin.top/9) - 5) + ")")
                 .call(xAxis);
 
         svg.append("g")
