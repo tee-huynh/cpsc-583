@@ -1,3 +1,8 @@
+//CPSC583 PROJECT 1
+//Tina Huynh
+//10131151
+//Links to credit are given in README.txt
+
 (function(){
 
   // data
@@ -678,11 +683,15 @@
         {label:"Pharah", value:37}
     ];
 
+// SORTING AND BAR CHARTS
 
     d3.selectAll("input").on("change", selectDataset);
 
+        var hidden;
+        var hide;
     function selectDataset()
     {
+        // if statements to determine which chart to show
         var value = this.value;
         var first;
         if (value == "none")
@@ -690,125 +699,163 @@
           first = true;
           $(".legend").css('visibility','visible');
           $(".circleBarCharts").css('visibility','visible');
+          $(".blurb3").css('visibility','hidden');
+          $(".blurb4").css('visibility','hidden');
           var bar = svg.selectAll(".bar")
-                .data(dataset, function(d) { return d.label; });
-                        bar.exit().remove();        
+          .data(dataset, function(d) { return d.label; });
+          bar.exit().remove();        
           svg.select(".y.axis").remove();
           svg.select(".x.axis").remove();
+            hidden = false;
+            hide = false;
         }
         else if (value == "wins")
         {
-            $(".legend").css('visibility','hidden');
-            $(".circleBarCharts").css('visibility','hidden');
-            if(first == true){
-              drawBar(dataWins);
-            }
-            else{
-                        svg.select(".y.axis").remove();
-          svg.select(".x.axis").remove();
-              change(dataWins);
-              first = false;
-            }
+          $(".legend").css('visibility','hidden');
+          $(".circleBarCharts").css('visibility','hidden');
+          $(".blurb3").css('visibility','visible');
+          $(".blurb4").css('visibility','hidden');
+        hidden = false;
+        hide = false;
+          if(first == true){
+            drawBar(dataWins);
+          }
+          else{
+            svg.select(".y.axis").remove();
+            svg.select(".x.axis").remove();
+            change(dataWins);
+            first = false;
+          }
         }
         else if (value == "time")
         {
-              $(".legend").css('visibility','hidden');
-    $(".circleBarCharts").css('visibility','hidden');
-            if(first == true){
-              drawBar(dataTime);
-            }
-            else{
-                        svg.select(".y.axis").remove();
-          svg.select(".x.axis").remove();
-              change(dataTime);
-              first = false;
-            }
+          $(".legend").css('visibility','hidden');
+          $(".circleBarCharts").css('visibility','hidden');
+          $(".blurb3").css('visibility','visible');
+          $(".blurb4").css('visibility','hidden');
+        hidden = false;
+        hide = false;
+          if(first == true){
+            drawBar(dataTime);
+          }
+          else{
+            svg.select(".y.axis").remove();
+            svg.select(".x.axis").remove();
+            change(dataTime);
+            first = false;
+          }
         }
         else if (value == "elims")
         {
-              $(".legend").css('visibility','hidden');
-    $(".circleBarCharts").css('visibility','hidden');
-            if(first == true){
-              drawBar(dataElim);
-            }
-            else{
-                        svg.select(".y.axis").remove();
-          svg.select(".x.axis").remove();
-              change(dataElim);
-              first = false;
-            }
+          $(".legend").css('visibility','hidden');
+          $(".circleBarCharts").css('visibility','hidden');
+          $(".blurb3").css('visibility','visible');
+          $(".blurb4").css('visibility','hidden');
+         hidden = false;
+         hide = false;
+          if(first == true){
+            drawBar(dataElim);
+          }
+          else{
+            svg.select(".y.axis").remove();
+            svg.select(".x.axis").remove();
+            change(dataElim);
+            first = false;
+          }
         }
         else if (value == "deaths")
         {
-              $(".legend").css('visibility','hidden');
-            $(".circleBarCharts").css('visibility','hidden');
-            if(first == true){
-              drawBar(dataDeath);
-            }
-            else{
-                        svg.select(".y.axis").remove();
-          svg.select(".x.axis").remove();
-              change(dataDeath);
-              first = false;
-            }
+          $(".legend").css('visibility','hidden');
+          $(".circleBarCharts").css('visibility','hidden');
+          $(".blurb3").css('visibility','visible');
+          $(".blurb4").css('visibility','hidden');
+                 hidden = false;
+        hide = false;
+          if(first == true){
+            drawBar(dataDeath);
+          }
+          else{
+            svg.select(".y.axis").remove();
+            svg.select(".x.axis").remove();
+            change(dataDeath);
+            first = false;
+          }
         }
         else if (value == "gold")
         {
-              $(".legend").css('visibility','hidden');
-    $(".circleBarCharts").css('visibility','hidden');
-            if(first == true){
-              drawBar(dataGold);
-            }
-            else{
-                        svg.select(".y.axis").remove();
-          svg.select(".x.axis").remove();
-              change(dataGold);
-              first = false;
-            }
+          $(".legend").css('visibility','hidden');
+          $(".circleBarCharts").css('visibility','hidden');
+          $(".blurb3").css('visibility','visible');
+          $(".blurb4").css('visibility','hidden');
+             hidden = false;
+       hide = false;
+          if(first == true){
+            drawBar(dataGold);
+          }
+          else{
+            svg.select(".y.axis").remove();
+            svg.select(".x.axis").remove();
+            change(dataGold);
+            first = false;
+          }
         }
         else if (value == "silver")
         {
-              $(".legend").css('visibility','hidden');
-    $(".circleBarCharts").css('visibility','hidden');
-            if(first == true){
-              drawBar(dataSilver);
-            }
-            else{
-                        svg.select(".y.axis").remove();
-          svg.select(".x.axis").remove();
-              change(dataSilver);
-              first = false;
-            }
+          $(".legend").css('visibility','hidden');
+          $(".circleBarCharts").css('visibility','hidden');
+          $(".blurb3").css('visibility','visible');
+          $(".blurb4").css('visibility','hidden');
+         hidden = false;
+         hide = false;
+          if(first == true){
+            drawBar(dataSilver);
+          }
+          else{
+            svg.select(".y.axis").remove();
+            svg.select(".x.axis").remove();
+            change(dataSilver);
+            first = false;
+          }
         }
         else if (value == "bronze")
         {
-              $(".legend").css('visibility','hidden');
-    $(".circleBarCharts").css('visibility','hidden');
-            if(first == true){
-              drawBar(dataBronze);
-            }
-            else{
-              svg.select(".y.axis").remove();
-              svg.select(".x.axis").remove();
-              change(dataBronze);
-              first = false;
-            }            
+          $(".legend").css('visibility','hidden');
+          $(".circleBarCharts").css('visibility','hidden');
+          $(".blurb3").css('visibility','visible');
+          $(".blurb4").css('visibility','hidden');
+             hidden = false;
+        hide = false;
+          if(first == true){
+            drawBar(dataBronze);
+          }
+          else{
+            svg.select(".y.axis").remove();
+            svg.select(".x.axis").remove();
+            change(dataBronze);
+            first = false;
+          }            
         }
         else if (value == "weapon")
         {
-              $(".legend").css('visibility','hidden');
-    $(".circleBarCharts").css('visibility','hidden');
-            if(first == true){
-              drawBar(dataAccuracy);
-            }
-            else{
-                        svg.select(".y.axis").remove();
-          svg.select(".x.axis").remove();
-              change(dataAccuracy);
-              first = false;
-            }
+          $(".legend").css('visibility','hidden');
+          $(".circleBarCharts").css('visibility','hidden');
+          $(".blurb3").css('visibility','visible');
+          $(".blurb4").css('visibility','hidden');
+        hidden = false;
+       hide = false;
+          if(first == true){
+            drawBar(dataAccuracy);
+          }
+          else{
+            svg.select(".y.axis").remove();
+            svg.select(".x.axis").remove();
+            change(dataAccuracy);
+            first = false;
+          }
         }
     }
+
+    // set variables for bar chart
 
     var margin = {top: (parseInt(d3.select('body').style('height'), 10)/10), right: (parseInt(d3.select('body').style('width'), 10)/20), bottom: (parseInt(d3.select('body').style('height'), 10)/10), left: (parseInt(d3.select('body').style('width'), 10)/20)},
             width = parseInt(d3.select('body').style('width'), 10) - margin.left - margin.right,
@@ -830,6 +877,8 @@
             .scale(y)
             .orient("left")
 
+    // draw the bar chart
+
     function drawBar(data){
 
     var div = d3.select("body").append("div").attr("class", "toolTip");
@@ -848,7 +897,11 @@
     change(data);
     }
 
+    // function for if there is a chart already and just need to change the bars
+
     function change(dataset) {
+
+        // update axes
 
         x.domain(dataset.map(function(d) { return d.label; }));
         y.domain([0, d3.max(dataset, function(d) { return d.value; })]);
@@ -860,7 +913,7 @@
 
         svg.append("g")
                 .attr("class", "y axis")
-            .attr("transform", "translate(" + (margin.left - 37) + ")")
+                .attr("transform", "translate(" + (margin.left - 37) + ")")
                 .call(yAxis)
                 .append("text")
                 .attr("transform", "rotate(-90)")
@@ -874,6 +927,8 @@
                 .data(dataset, function(d) { return d.label; });
 
         // new data:
+        // show and hide 
+
         bar.enter().append("rect")
                 .attr("class", "bar")
                 .attr("x", function(d) { return x(d.label); })
@@ -882,28 +937,49 @@
                 .attr("width", x.rangeBand())
                 .on("mouseover", function(d) {
                   d3.select(this).style("fill", "#ff9c1c");
+                })
+                .on("click", function(d) {
+                  if(hidden == false){
+                    d3.select(this).style("opacity", "0");
+                    hidden = true;
+                    hide = true;
+                    }
+                    else if (hidden == true){
+                    d3.select(this).style("opacity", "0.9");
+                    hidden = false;
+                    hide = false;
+                    }
                 });
+
+        // hover bubble
 
        bar
                 .on("mousemove", function(d){
+                    if(hide == false){
                     div.style("left", d3.event.pageX+10+"px");
                     div.style("top", d3.event.pageY-25+"px");
                     div.style("display", "inline-block");
                     div.style("background-color", "#c4e5ff");
                     div.style("font-size", "10px");
-
                     div.html((d.label)+"<br>"+(d.value));
+
+                    }
+                    else if(hide == true){
+                    div.style("display", "none");
+                    }
                 });
+                
         bar
                 .on("mouseout", function(d){
                     div.style("display", "none");
-
                     d3.select(this).style("fill", "white");
 ;
                 });
 
         // removed data:
+
         bar.exit().remove();
+
         // updated data:
         bar
                 .transition()
@@ -913,33 +989,34 @@
                 .attr("height", function(d) { return ((height - (margin.top/8)) - y(d.value)); });
     };
 
-
 // D3 Bubble Chart 
 
-var diameter = 600;
+ var diameter = 600;
  var legendRectSize = 18;
  var legendSpacing = 5;
 
-var color = d3.scale.ordinal()
+// Legend
+
+ var color = d3.scale.ordinal()
     .domain(["Number of Wins", "Time Played (Hours)", "Avg Number of Eliminations per Game", "Number of Deaths", "Avg Number of Gold Medals per Game", "Avg Number of Silver Medals per Game", "Avg Number of Bronze Medals per Game", "Weapon Accuracy (%)"])
     .range(["#ffdb82", "#6591ee", "#d3d7e7","white", "#3d63da","#969da5","#c4e5ff","#ff9c1c"]);
 
-  var svg = d3.select('#graph').append('svg')
+ var svg = d3.select('#graph').append('svg')
               .attr('width', '100%')
               .attr('height', diameter)
 
-
-  var bubble = d3.layout.pack()
+ var bubble = d3.layout.pack()
                  .size([diameter, diameter])
                  .value(function(d) {return d.size;})
                  .padding(3);
-  
-var tooltip = d3.select("body")
+
+// set up tooltip for hover
+
+ var tooltip = d3.select("body")
     .append("div")
     .style("position", "absolute")
     .style("z-index", "10")
     .style("visibility", "hidden")
-    .text("a simple tooltip");
 
   var legend = d3.select('svg')
     .append("g")
@@ -955,7 +1032,6 @@ var tooltip = d3.select("body")
         return 'translate(' + x + ',' + y + ')';
     });
 
-
 legend.append('rect')
     .attr('width', legendRectSize)
     .attr('height', legendRectSize)
@@ -967,13 +1043,19 @@ legend.append('text')
     .attr('y', legendRectSize - legendSpacing)
     .text(function(d) { return d; });
 
-  // buttons
+  // buttons for each character
+  // button = character button
+  // button2 = button that shows all characters and hides bubble charts
+
   $('.button').on('click', function () {
     var self = $(this);
     drawBubbles(data[self.attr('id')]);
     $(".legend").css('visibility','visible');
     $(".circleBarCharts").css('visibility','hidden');
     $(".sort").css('visibility','hidden');
+
+            $(".blurb3").css('visibility','hidden');
+        $(".blurb4").css('visibility','visible');
         $(".blurb").css('visibility','hidden');
                   var bar = svg.selectAll(".bar")
                 .data(dataset, function(d) { return d.label; });
@@ -984,47 +1066,47 @@ legend.append('text')
   });
 
     $('.button2').on('click', function () {
-    $(".sort").css('visibility','visible');
-    $("#dataset2").prop('checked', false); 
-        $("#dataset3").prop('checked', false); 
-    $("#dataset4").prop('checked', false); 
-    $("#dataset5").prop('checked', false); 
-    $("#dataset6").prop('checked', false); 
-    $("#dataset7").prop('checked', false); 
-    $("#dataset8").prop('checked', false); 
-    $("#dataset9").prop('checked', false); 
-    $("#dataset").prop('checked', true); 
+        $(".sort").css('visibility','visible');
+        $("#dataset2").prop('checked', false); 
+            $("#dataset3").prop('checked', false); 
+        $("#dataset4").prop('checked', false); 
+        $("#dataset5").prop('checked', false); 
+        $("#dataset6").prop('checked', false); 
+        $("#dataset7").prop('checked', false); 
+        $("#dataset8").prop('checked', false); 
+        $("#dataset9").prop('checked', false); 
+        $("#dataset").prop('checked', true); 
 
-    $(".blurb").css('visibility','visible');
-    var delay = 0;
-    var duration = 0; 
-    var nodes = bubble.nodes(processData(data))
-        .filter(function(d) { return !d.children; }); // filter out the outer bubble
+        $(".blurb").css('visibility','visible');
+                $(".blurb3").css('visibility','hidden');
+            $(".blurb4").css('visibility','hidden');
 
-    var vis = svg.selectAll('circle')
-             .data(nodes, function(d) { return d.name; });
-    var self = $(this);
-    //d3.select("#graph").select("svg").remove();
-    $(".circleBarCharts").css('visibility', 'visible');
-    $(".legend").css('visibility','visible');
-    $(".graph").css('visibility','hidden');
-    vis.exit() 
-       .transition() 
-       .duration(duration + delay) 
-       .style('opacity', 0) 
-       .remove();
+        var delay = 0;
+        var duration = 0; 
+        var nodes = bubble.nodes(processData(data))
+            .filter(function(d) { return !d.children; }); // filter out the outer bubble
 
-                 var bar = svg.selectAll(".bar")
-                .data(dataset, function(d) { return d.label; });
-                        bar.exit().remove();        
-          svg.select(".y.axis").remove();
-          svg.select(".x.axis").remove();
-    
+        var vis = svg.selectAll('circle')
+                 .data(nodes, function(d) { return d.name; });
+        var self = $(this);
+        //d3.select("#graph").select("svg").remove();
+        $(".circleBarCharts").css('visibility', 'visible');
+        $(".legend").css('visibility','visible');
+        $(".graph").css('visibility','hidden');
+        vis.exit() 
+           .transition() 
+           .duration(duration + delay) 
+           .style('opacity', 0) 
+           .remove();
 
-
+        var bar = svg.selectAll(".bar")
+            .data(dataset, function(d) { return d.label; });
+            bar.exit().remove();        
+            svg.select(".y.axis").remove();
+            svg.select(".x.axis").remove();
   });
   
-  // functions
+  // draw bubble chart
   
   function drawBubbles(data) {
     
@@ -1039,6 +1121,8 @@ legend.append('text')
 
     
     // update - This only applies to updating nodes 
+    // animation
+
     vis.transition() 
        .duration(duration) 
        .delay(function(d, i) {
@@ -1051,6 +1135,7 @@ legend.append('text')
        .attr('r', function(d) { return d.r; })   
     
     // enter  
+
     vis.enter().append('circle')
        .attr('transform', function(d) { 
           return 'translate(' + d.x + ',' + d.y + ')'; 
@@ -1062,23 +1147,23 @@ legend.append('text')
        .duration(duration * 1.2) 
        .style('opacity', 1.0) 
 
-vis.on("mouseover", function(d){return tooltip.style("visibility", "visible").text(Math.round(d.value * 100) / 1000);})
-vis.on("mousemove", function(d){d3.select(this).select("text").style("fill", "#000");return tooltip.style("top",
-    (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px").text(Math.round(d.value * 100) / 1000);})
-vis.on("mouseout", function(d){return tooltip.style("visibility", "hidden").text(Math.round(d.value * 100) / 1000);});
+    // hover for details on bubbles
+
+    vis.on("mouseover", function(d){return tooltip.style("visibility", "visible").text(Math.round(d.value * 100) / 1000);})
+    vis.on("mousemove", function(d){d3.select(this).select("text").style("fill", "#000");return tooltip.style("top",
+        (d3.event.pageY-10)+"px").style("left",(d3.event.pageX+10)+"px").text(Math.round(d.value * 100) / 1000);})
+    vis.on("mouseout", function(d){return tooltip.style("visibility", "hidden").text(Math.round(d.value * 100) / 1000);});
     
     // exit 
+
     vis.exit() 
        .transition() 
        .duration(duration + delay) 
        .style('opacity', 0) 
-       .remove();
-    
-    /*vis.enter().append('circle')
-               .attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'; })
-               .attr('r', function(d) { return d.r; })
-               .attr('class', function(d) { return d.className; });*/ 
+       .remove(); 
   }
+
+  // for updating data
 
   function processData(data) {
     var obj = data;
@@ -1095,8 +1180,12 @@ vis.on("mouseout", function(d){return tooltip.style("visibility", "hidden").text
     return {children: newDataSet};
   }
 
+  // D3 BAR CIRCLE CHART
 
 function drawBarCircleChart(data,target,values,labels){
+
+    // INITIALIZE SIZE
+
     var w = 200,
         h = 200,
         size = data[0].value * 1.15,
@@ -1108,6 +1197,7 @@ function drawBarCircleChart(data,target,values,labels){
         valueText = d3.select(values),
         labelText = d3.select(labels);
 
+    // CALCULATE ANGLES/RADIUS
 
     var arc = d3.svg.arc()
         .innerRadius(function(d,i){return (d.index/sectorScale) * radius + radScale; })
@@ -1118,7 +1208,9 @@ function drawBarCircleChart(data,target,values,labels){
     var path = target.selectAll("path")
         .data(data);
 
-    //TODO: seperate color and index from data object, make it a pain to update object order
+    // Seperates color and index from data object
+    // white outline
+
     path.enter().append("svg:path")
         .attr("fill",function(d,i){return d.fill})
         .attr("stroke","white")
@@ -1127,6 +1219,8 @@ function drawBarCircleChart(data,target,values,labels){
         .duration(1000)
         .delay(function(d,i){return i*100})
         .attrTween("d", arcTween);
+
+    // positions value text
         
     valueText.selectAll("tspan").data(data).enter()
         .append("tspan")
@@ -1137,6 +1231,8 @@ function drawBarCircleChart(data,target,values,labels){
         })
 
         .text(function(d,i){return data[i].value});
+
+    // positions label text
     
     labelText.selectAll("tspan").data(data).enter()
         .append("tspan")
@@ -1154,7 +1250,8 @@ function drawBarCircleChart(data,target,values,labels){
     }
 }
 
-// Animation Queue
+// Animation Queue at start-up
+
 setTimeout(function(){drawBarCircleChart(chartData.Hanzo,"#circleBar-web-chart","#circleBar-web-values","#circleBar-web-labels")},500);
 setTimeout(function(){drawBarCircleChart(chartData.Mercy,"#circleBar-mobile-chart","#circleBar-mobile-values","#circleBar-mobile-labels")},800);
 setTimeout(function(){drawBarCircleChart(chartData.Dva,"#circleBar-dva-chart","#circleBar-dva-values","#circleBar-dva-labels")},1100);

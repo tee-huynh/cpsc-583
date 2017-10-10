@@ -212,13 +212,14 @@ text{
 
 
     .axis text {
-	font-size: 8px;
-	        font-family: "Lucida Grande", Tahoma;
- font-weight: lighter;
- font-variant: normal;
- text-transform: uppercase;
- fill: white;
- text-align: center;    }
+    	 font-size: 8px;
+    	 font-family: "Lucida Grande", Tahoma;
+       font-weight: lighter;
+       font-variant: normal;
+       text-transform: uppercase;
+       fill: white;
+       text-align: center;    
+   }
 
 
     .axis path{
@@ -264,41 +265,32 @@ text{
     }
 
 .wins
-{
-fill: #ffdb82; background: #ffdb82;
-
-}
+{fill: #ffdb82; background: #ffdb82;}
 .time
 {fill: #6591ee; background: #6591ee;}
-
 .elims
 {fill: #d3d7e7; background: #d3d7e7;}
-
 .deaths
 {fill: white; background: white;}
-
 .gold
 {fill: #3d63da; background: #3d63da;}
-
 .silver
 {fill: #969da5; background: #969da5;}
-
 .bronze
 {fill: #c4e5ff; background: #c4e5ff;}
-
 .accuracy
 {fill: #ff9c1c; background: #ff9c1c;}
 
   .legend {
     fill: white;
     visibility: visible;
-    	font-size: 10px;
-	        font-family: "Lucida Grande", Tahoma;
- font-weight: lighter;
- font-variant: normal;
- text-transform: uppercase;
- color: white;
-        letter-spacing: 1px;
+    font-size: 10px;
+	  font-family: "Lucida Grande", Tahoma;
+    font-weight: lighter;
+    font-variant: normal;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
   }
 
   .graph {
@@ -322,16 +314,17 @@ body {
 	visibility: visible;
 
 }
+.blurb3, .blurb4{
+  visibility: hidden;
+}
 
-#circleBar-web-text,
-#circleBar-mobile-text,
+#circleBar-web-text, #circleBar-mobile-text,
 #circleBar-dva-text, #circleBar-junk-text, #circleBar-lucio-text, #circleBar-reaper-text
 , #circleBar-soldier-text, #circleBar-roadhog-text, #circleBar-pharah-text
 , #circleBar-mei-text, #circleBar-zen-text
 , #circleBar-genji-text, #circleBar-symmetra-text, #circleBar-mccree-text
 , #circleBar-tracer-text, #circleBar-sombra-text, #circleBar-torb-text
 , #circleBar-ana-text, #circleBar-winston-text
-
 , #circleBar-rein-text, #circleBar-bastion-text, #circleBar-zarya-text
 , #circleBar-orisa-text{
 font-family: Gill Sans, Verdana;
@@ -341,6 +334,7 @@ font-family: Gill Sans, Verdana;
     font-size:16px;
     fill:white;
 }
+
 #circleBar-web-labels tspan,
 #circleBar-mobile-labels tspan,
 #circleBar-dva-labels tspan,
@@ -349,7 +343,6 @@ font-family: Gill Sans, Verdana;
 , #circleBar-soldier-labels tspan, #circleBar-roadhog-labels tspan 
 , #circleBar-pharah-labels tspan
 , #circleBar-mei-labels tspan, #circleBar-zen-labels tspan 
-
 ,
 #circleBar-genji-labels tspan,
 #circleBar-symmetra-labels tspan,
@@ -371,7 +364,6 @@ font-family: Gill Sans, Verdana;
 #circleBar-lucio-values tspan , #circleBar-reaper-values tspan
 , #circleBar-soldier-values tspan, #circleBar-roadhog-values tspan, #circleBar-pharah-values tspan
 , #circleBar-mei-values tspan, #circleBar-zen-values tspan
-
 ,
 #circleBar-genji-values tspan,
 #circleBar-symmetra-values tspan,
@@ -400,7 +392,6 @@ font-family: Gill Sans, Verdana;
 , #circleBar-torb-values tspan, #circleBar-ana-values tspan, #circleBar-winston-values tspan
 , #circleBar-rein-values tspan, #circleBar-bastion-values tspan
 , #circleBar-zarya-values tspan, #circleBar-orisa-values tspan{
-    
     fill:black;
 }
 
@@ -417,14 +408,14 @@ font-family: Gill Sans, Verdana;
 <div style="margin-left: -2.3em; margin-top: -1em">
 <ul>
   <li><Button id="All" class="button2">All</Button></li>
-    <li><Button id="Ana" class="button">Ana</Button></li>
-    <li><Button id="Bastion" class="button">Bastion</Button></li>
+  <li><Button id="Ana" class="button">Ana</Button></li>
+  <li><Button id="Bastion" class="button">Bastion</Button></li>
   <li><Button id="DVa" class="button">D.Va</Button></li>
   <li><Button id="Genji" class="button">Genji</Button></li>
   <li><Button id="Hanzo" class="button">Hanzo</Button></li>
   <li><Button id="Junkrat" class="button">Junkrat</Button></li>
   <li><Button id="Lucio" class="button">Lucio</Button></li>
-    <li><Button id="McCree" class="button">McCree</Button></li>
+  <li><Button id="McCree" class="button">McCree</Button></li>
   <li><Button id="Mei" class="button">Mei</Button></li>
   <li><Button id="Mercy" class="button">Mercy</Button></li>
   <li><Button id="Orisa" class="button">Orisa</Button></li>
@@ -448,17 +439,18 @@ font-family: Gill Sans, Verdana;
 <h4>
     <label class="sort"><input type="radio" name="dataset" id="dataset" value="none" checked> None</label>
     <label class="sort"><input type="radio" name="dataset" id="dataset2" value="wins"> Number of Wins</label>
-
     <label class="sort"><input type="radio" name="dataset" id="dataset3" value="time"> Time Played</label>
     <label class="sort"><input type="radio" name="dataset" id="dataset4" value="elims"> Eliminations</label>
-        <label class="sort"><input type="radio" name="dataset" id="dataset5" value="deaths"> Deaths</label>
+    <label class="sort"><input type="radio" name="dataset" id="dataset5" value="deaths"> Deaths</label>
     <label class="sort"><input type="radio" name="dataset" id="dataset6" value="gold"> Gold Medals</label>
     <label class="sort"><input type="radio" name="dataset" id="dataset7" value="silver"> Silver Medals</label>
-        <label class="sort"><input type="radio" name="dataset" id="dataset8" value="bronze"> Bronze Medals</label>
+    <label class="sort"><input type="radio" name="dataset" id="dataset8" value="bronze"> Bronze Medals</label>
     <label class="sort"><input type="radio" name="dataset" id="dataset9" value="weapon"> Weapon Accuracy</label>
     </h4>
 </form>
     </div>
+<div class="blurb3" align="center"><h2>Hover for details and click (or double-click) to show/hide a character.</h2></div>
+<div class="blurb4" align="center"><h2>Hover for details.</h2></div>
 
   <svg version="1.1"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
@@ -796,20 +788,13 @@ font-family: Gill Sans, Verdana;
             </g>
         </g>
         <!-- END: Mobile Circle Bar Chart -->
-
-
     </g>
 	 
 </svg>
-
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-    <script  src="js/assn1.js"></script>
+  <script  src="js/assn1.js"></script>
 </body>
 </html>
-
-
-
 
 <!--
 #3d63da : dark blue

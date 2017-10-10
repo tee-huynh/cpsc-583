@@ -9,51 +9,379 @@
 html, body {
   padding: 10px;
   height: 100%;
+  background-color: #565971;
 }
 
 ul li {
   display: inline-block;
 }
 
-/* Northern America */
-.ca, .gl, .pm, .us,
-.noram {fill: #544353; background: #544353;}
-
-/*svg {
-  border: 1px solid black;  
-  border-width: 0 0 1px 1px;
-}*/
- 
- .button{
-	font-size: 8px;
+@font-face {
+  font-family: 'delius';
+  src: url('css/fonts/deliusunicase-regular.ttf');
 }
 
-.WINS
+@font-face {
+  font-family: 'CaviarDreamsBold';
+  src: url('css/fonts/Caviar_Dreams_Bold.ttf');
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('css/fonts/fontawesome-webfont.ttf');
+}
+
+.panel-heading {
+  white-space: nowrap;
+  position: absolute;
+  right: 100%;
+  transform-origin: top right 0;
+  transform: rotate( 270deg );
+  opacity: 0.5;
+}
+
+.panel-heading2 {
+  white-space: nowrap;
+  position: absolute;
+  margin-top: 5em;
+  right: 94%;
+  transform-origin: top right 0;
+  transform: rotate( 270deg );
+}
+
+h1{
+font-family: Gill Sans, Verdana;
+ font-size: 30px;
+ line-height: 24px;
+ text-transform: uppercase;
+ letter-spacing: -3px;
+ color: white;
+}
+
+h2{ 
+ font-family: "Lucida Grande", Tahoma;
+ font-size: 10px;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+ color: white;
+ margin-top: 10px;
+ letter-spacing: 0.3em;
+ padding-left: 20em;
+ padding-right: 20em;
+}
+
+p{
+  color: white	; 
+  font-family: delius; 
+  font-size: 10px; 
+  letter-spacing: 2px;
+  text-align: left; 
+}
+
+span{
+  display: inline-block;
+}
+
+.my-icon{
+  line-height:40px;
+}
+
+h4{
+ font-size: 10px;
+ font-family: "Lucida Grande", Tahoma;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+ color: white;
+ margin-top: 10px;
+ letter-spacing: 1px;
+ text-align: center;
+}
+
+div{
+ font-size: 10px;
+ font-family: "Lucida Grande", Tahoma;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+        margin-top: 10px;
+ text-align: center;
+}
+
+.button{
+	font-size: 8px;
+	        font-family: "Lucida Grande", Tahoma;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+ color: black;
+        margin-top: 10px;
+ text-align: center;
+}
+
+.button2{
+	font-size: 8px;
+	        font-family: "Lucida Grande", Tahoma;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+ color: black;
+        margin-top: 10px;
+ text-align: center;
+}
+
+text{
+	font-family: FontAwesome;
+}
+
+    svg {
+        position: center;
+        margin-left: 3em;
+        margin-top: 3em;
+    }
+
+    path.slice{
+        stroke-width:2px;
+    }
+
+    text{
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    polyline{
+        opacity: .3;
+        stroke: black;
+        stroke-width: 2px;
+        fill: none;
+    }
+
+    .labelValue
+    {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 60%;
+        opacity: .5;
+
+    }
+
+    label {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: normal;
+    }
+
+    .toolTip {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        position: absolute;
+        display: none;
+        width: auto;
+        height: auto;
+        background: none repeat scroll 0 0 white;
+        border: 0 none;
+        border-radius: 8px 8px 8px 8px;
+        box-shadow: -3px 3px 15px #888888;
+        color: black;
+        font: 12px sans-serif;
+        padding: 10px;
+        text-align: center;
+    }
+
+    rect {
+        stroke-width: 2;
+    }
+
+
+    .axis text {
+	font-size: 8px;
+	        font-family: "Lucida Grande", Tahoma;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+ fill: white;
+ text-align: center;    }
+
+
+    .axis path{
+        fill: none;
+        stroke: white;
+    }
+
+    .axis line {
+        fill: none;
+        stroke: white;
+        shape-rendering: crispEdges;
+    }
+
+    .axis .tick line {
+        stroke-width: 1;
+		stroke: #ffdb82;	
+	    }
+
+    .axisHorizontal path{
+        fill: none;
+    }
+
+    .axisHorizontal line {
+        fill: none;
+        stroke: white;
+        shape-rendering: crispEdges;
+    }
+
+    .axisHorizontal .tick line {
+        stroke-width: 1;
+        stroke: rgba(0, 0, 0, 0.2);
+    }
+
+    .bar {
+        fill: white;
+        fill-opacity: 0.9;
+        stroke: gray;
+        stroke-width: 1;
+    }
+
+    .x.axis path {
+        display: none;
+    }
+
+.wins
+{
+fill: #ffdb82; background: #ffdb82;
+
+}
+.time
 {fill: #6591ee; background: #6591ee;}
 
-.TIME
-{fill: #6591ee; background: #6591ee;}
-
-.ELIMS
-{fill: #6591ee; background: #6591ee;}
-
-.DAMAGE
-{fill: #6591ee; background: #6591ee;}
-
-.HEALING
-{fill: #6591ee; background: #6591ee;}
-
-.DEATHS
-{fill: #6591ee; background: #6591ee;}
-
-.GOLD
-{fill: #ffd267; background: #ffd267;}
-
-.SILVER
+.elims
 {fill: #d3d7e7; background: #d3d7e7;}
 
-.BRONZE
-{fill: #6591ee; background: #6591ee;}
+.deaths
+{fill: white; background: white;}
 
-.ACCURACY
-{fill: #6591ee; background: #6591ee;}
+.gold
+{fill: #3d63da; background: #3d63da;}
+
+.silver
+{fill: #969da5; background: #969da5;}
+
+.bronze
+{fill: #c4e5ff; background: #c4e5ff;}
+
+.accuracy
+{fill: #ff9c1c; background: #ff9c1c;}
+
+  .legend {
+    fill: white;
+    visibility: visible;
+    	font-size: 10px;
+	        font-family: "Lucida Grande", Tahoma;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+ color: white;
+        letter-spacing: 1px;
+  }
+
+  .graph {
+  	visibility: hidden;
+  }
+
+  .circleBarCharts{
+  	visibility: visible;
+  }
+  rect {
+    stroke-width: 2;
+  }
+
+body {
+    position: relative;
+    margin-left:15px;
+    background-color:#565971;
+}
+
+.sort, .blurb{
+	visibility: visible;
+
+}
+.blurb3, .blurb4{
+  visibility: hidden;
+}
+
+#circleBar-web-text,
+#circleBar-mobile-text,
+#circleBar-dva-text, #circleBar-junk-text, #circleBar-lucio-text, #circleBar-reaper-text
+, #circleBar-soldier-text, #circleBar-roadhog-text, #circleBar-pharah-text
+, #circleBar-mei-text, #circleBar-zen-text
+, #circleBar-genji-text, #circleBar-symmetra-text, #circleBar-mccree-text
+, #circleBar-tracer-text, #circleBar-sombra-text, #circleBar-torb-text
+, #circleBar-ana-text, #circleBar-winston-text
+
+, #circleBar-rein-text, #circleBar-bastion-text, #circleBar-zarya-text
+, #circleBar-orisa-text{
+font-family: Gill Sans, Verdana;
+ line-height: 24px;
+ text-transform: uppercase;
+ letter-spacing: -1px;
+    font-size:16px;
+    fill:white;
+}
+#circleBar-web-labels tspan,
+#circleBar-mobile-labels tspan,
+#circleBar-dva-labels tspan,
+#circleBar-junk-labels tspan,
+#circleBar-lucio-labels tspan, #circleBar-reaper-labels tspan
+, #circleBar-soldier-labels tspan, #circleBar-roadhog-labels tspan 
+, #circleBar-pharah-labels tspan
+, #circleBar-mei-labels tspan, #circleBar-zen-labels tspan 
+
+,
+#circleBar-genji-labels tspan,
+#circleBar-symmetra-labels tspan,
+#circleBar-mccree-labels tspan,
+#circleBar-tracer-labels tspan, #circleBar-sombra-labels tspan
+, #circleBar-torb-labels tspan, #circleBar-ana-labels tspan 
+, #circleBar-winston-labels tspan
+, #circleBar-rein-labels tspan, #circleBar-bastion-labels tspan 
+, #circleBar-zarya-labels tspan, #circleBar-orisa-labels tspan {
+    font-family: 'FranklinGothic-Book' "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    font-size:10px;
+    fill:white;
+}
+
+#circleBar-web-values tspan,
+#circleBar-mobile-values tspan,
+#circleBar-dva-values tspan,
+#circleBar-junk-values,
+#circleBar-lucio-values tspan , #circleBar-reaper-values tspan
+, #circleBar-soldier-values tspan, #circleBar-roadhog-values tspan, #circleBar-pharah-values tspan
+, #circleBar-mei-values tspan, #circleBar-zen-values tspan
+
+,
+#circleBar-genji-values tspan,
+#circleBar-symmetra-values tspan,
+#circleBar-mccree-values,
+#circleBar-tracer-values tspan , #circleBar-sombra-values tspan
+, #circleBar-torb-values tspan, #circleBar-ana-values tspan, #circleBar-winston-values tspan
+, #circleBar-rein-values tspan, #circleBar-bastion-values tspan
+, #circleBar-zarya-values tspan, #circleBar-orisa-values tspan{
+    font-family: 'FranklinGothic-Book' "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    font-size: 9px;
+    font-weight:bold;
+    fill:white;
+}
+#circleBar-web-values tspan {
+    fill:black;
+}
+#circleBar-mobile-values tspan,
+#circleBar-dva-values tspan,
+#circleBar-junk-values tspan,
+#circleBar-lucio-values tspan , #circleBar-reaper-values tspan
+, #circleBar-soldier-values tspan, #circleBar-roadhog-values tspan, #circleBar-pharah-values tspan
+, #circleBar-mei-values tspan, #circleBar-zen-values tspan, #circleBar-genji-values tspan,
+#circleBar-symmetra-values tspan,
+#circleBar-mccree-values tspan,
+#circleBar-tracer-values tspan , #circleBar-sombra-values tspan
+, #circleBar-torb-values tspan, #circleBar-ana-values tspan, #circleBar-winston-values tspan
+, #circleBar-rein-values tspan, #circleBar-bastion-values tspan
+, #circleBar-zarya-values tspan, #circleBar-orisa-values tspan{
+    
+    fill:black;
+}
