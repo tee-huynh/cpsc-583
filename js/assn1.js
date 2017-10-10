@@ -716,7 +716,7 @@
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
         hidden = false;
-                            hide = true;
+                    hide = false;
 
           if(first == true){
             drawBar(dataWins);
@@ -735,7 +735,7 @@
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
         hidden = false;
-                            hide = true;
+                    hide = false;
 
           if(first == true){
             drawBar(dataTime);
@@ -754,7 +754,7 @@
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
          hidden = false;
-                             hide = true;
+                     hide = false;
 
           if(first == true){
             drawBar(dataElim);
@@ -773,7 +773,7 @@
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
                  hidden = false;
-                                     hide = true;
+                             hide = false;
 
           if(first == true){
             drawBar(dataDeath);
@@ -791,8 +791,7 @@
           $(".circleBarCharts").css('visibility','hidden');
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
-             hidden = false;
-                                 hide = true;
+             hidden = false;            hide = false;
 
           if(first == true){
             drawBar(dataGold);
@@ -810,8 +809,7 @@
           $(".circleBarCharts").css('visibility','hidden');
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
-         hidden = false;
-                             hide = true;
+         hidden = false;            hide = false;
 
           if(first == true){
             drawBar(dataSilver);
@@ -829,7 +827,7 @@
           $(".circleBarCharts").css('visibility','hidden');
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
-             hidden = false;                    hide = true;
+             hidden = false;            hide = false;
 
           if(first == true){
             drawBar(dataBronze);
@@ -847,8 +845,7 @@
           $(".circleBarCharts").css('visibility','hidden');
           $(".blurb3").css('visibility','visible');
           $(".blurb4").css('visibility','hidden');
-        hidden = false;
-                            hide = true;
+        hidden = false;            hide = false;
 
           if(first == true){
             drawBar(dataAccuracy);
