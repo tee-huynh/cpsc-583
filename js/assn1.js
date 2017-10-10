@@ -855,7 +855,7 @@
 
         svg.append("g")
                 .attr("class", "x axis")
-                .attr("transform", "translate(0," + (height - (margin.top/9) - 6) + ")")
+                .attr("transform", "translate(0," + (height - (margin.top/9) - 8) + ")")
                 .call(xAxis);
 
         svg.append("g")
@@ -921,7 +921,7 @@ var diameter = 600;
  var legendSpacing = 5;
 
 var color = d3.scale.ordinal()
-    .domain(["Number of Wins", "Time Played", "Avg Number of Eliminations per Game", "Number of Deaths", "Avg Number of Gold Medals per Game", "Avg Number of Silver Medals per Game", "Avg Number of Bronze Medals per Game", "Weapon Accuracy"])
+    .domain(["Number of Wins", "Time Played (Hours)", "Avg Number of Eliminations per Game", "Number of Deaths", "Avg Number of Gold Medals per Game", "Avg Number of Silver Medals per Game", "Avg Number of Bronze Medals per Game", "Weapon Accuracy (%)"])
     .range(["#ffdb82", "#6591ee", "#d3d7e7","white", "#3d63da","#969da5","#c4e5ff","#ff9c1c"]);
 
   var svg = d3.select('#graph').append('svg')
