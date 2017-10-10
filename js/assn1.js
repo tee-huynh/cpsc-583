@@ -986,6 +986,15 @@ legend.append('text')
 
     $('.button2').on('click', function () {
     $(".sort").css('visibility','visible');
+    $("#dataset2").prop('checked', false); 
+        $("#dataset3").prop('checked', false); 
+    $("#dataset4").prop('checked', false); 
+    $("#dataset5").prop('checked', false); 
+    $("#dataset6").prop('checked', false); 
+    $("#dataset7").prop('checked', false); 
+    $("#dataset8").prop('checked', false); 
+    $("#dataset9").prop('checked', false); 
+    $("#dataset").prop('checked', true); 
 
     $(".blurb").css('visibility','visible');
     var delay = 0;
