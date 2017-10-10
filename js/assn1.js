@@ -891,7 +891,6 @@
                     div.style("display", "inline-block");
                     div.style("background-color", "#c4e5ff");
                     div.style("font-size", "10px");
-                    div.style("fill", "white");
 
                     div.html((d.label)+"<br>"+(d.value));
                 });
