@@ -820,7 +820,7 @@
             .rangeRoundBands([0, width], .2, 0.5);
 
     var y = d3.scale.linear()
-            .range([height - 5, 0]);
+            .range([height - (margin.top/10), 0]);
 
     var xAxis = d3.svg.axis()
             .scale(x)
@@ -855,12 +855,12 @@
 
         svg.append("g")
                 .attr("class", "x axis")
-                .attr("transform", "translate(0," + (height + 10) + ")")
+                .attr("transform", "translate(0," + height + ")")
                 .call(xAxis);
 
         svg.append("g")
                 .attr("class", "y axis")
-            .attr("transform", "translate(" + (margin.left - 37) + "," + 5 + ")")
+            .attr("transform", "translate(" + (margin.left - 37) + "," + 10 + ")")
                 .call(yAxis)
                 .append("text")
                 .attr("transform", "rotate(-90)")
