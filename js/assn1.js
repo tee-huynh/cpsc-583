@@ -855,7 +855,7 @@
 
         svg.append("g")
                 .attr("class", "x axis")
-                .attr("transform", "translate(0," + height + ")")
+                .attr("transform", "translate(0," + (height - (margin.top/8)) + ")")
                 .call(xAxis);
 
         svg.append("g")
@@ -878,7 +878,7 @@
                 .attr("class", "bar")
                 .attr("x", function(d) { return x(d.label); })
                 .attr("y", function(d) { return y(d.value); })
-                .attr("height", function(d) { return (height - (margin.top/10)) - y(d.value); })
+                .attr("height", function(d) { return ((height - (margin.top/8)) - y(d.value)); })
                 .attr("width", x.rangeBand())
                 .on("mouseover", function(d) {
                   d3.select(this).style("fill", "#ff9c1c");
@@ -910,7 +910,7 @@
                 .duration(750)
                 .attr("x", function(d) { return x(d.label); })
                 .attr("y", function(d) { return y(d.value); })
-                .attr("height", function(d) { return height - (margin.top/10) - y(d.value); });
+                .attr("height", function(d) { return ((height - (margin.top/8)) - y(d.value)); });
     };
 
 
