@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<!-- CPSC583 PROJECT 1
+Tina Huynh
+10131151
+-->
+
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>CPSC583: Tina Huynh</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+</head>
+
+<body bgcolor="#565971">
+<h1 align="center"> PLAYER TEENAH#11235 OVERWATCH STATISTICS </h1>
+<h2 align="center">This tool visualizes the personal Overwatch statistics of the player Teenah#11235 over the course of their experience with this video game.</h2>
+<h2 align="right">Tina Huynh</h2>  </br ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+<style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 10px;
+  height: 100%;
+  background-color: #565971;
+}
+
+ul li {
+  display: inline-block;
+}
+
+@font-face {
+  font-family: 'delius';
+  src: url('css/fonts/deliusunicase-regular.ttf');
+}
+
+@font-face {
+  font-family: 'CaviarDreamsBold';
+  src: url('css/fonts/Caviar_Dreams_Bold.ttf');
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('css/fonts/fontawesome-webfont.ttf');
+}
+
+.panel-heading {
+  white-space: nowrap;
+  position: absolute;
+  right: 100%;
+  transform-origin: top right 0;
+  transform: rotate( 270deg );
+  opacity: 0.5;
+}
+
+.panel-heading2 {
+  white-space: nowrap;
+  position: absolute;
+  margin-top: 5em;
+  right: 94%;
+  transform-origin: top right 0;
+  transform: rotate( 270deg );
+}
+
+h1{
+font-family: Gill Sans, Verdana;
+ font-size: 30px;
+ line-height: 24px;
+ text-transform: uppercase;
+ letter-spacing: -3px;
+ color: white;
+}
+
+h2{ 
+ font-family: "Lucida Grande", Tahoma;
+ font-size: 10px;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+ color: white;
+ margin-top: 10px;
+ letter-spacing: 0.3em;
+ padding-left: 20em;
+ padding-right: 20em;
+}
+
+p{
+  color: white	; 
+  font-family: delius; 
+  font-size: 10px; 
+  letter-spacing: 2px;
+  text-align: left; 
+}
+
+span{
+  display: inline-block;
+}
+
+.my-icon{
+  line-height:40px;
+}
+
+h4{
+ font-size: 10px;
+ font-family: "Lucida Grande", Tahoma;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+ color: white;
+ margin-top: 10px;
+ letter-spacing: 1px;
+ text-align: center;
+}
+
+div{
+ font-size: 10px;
+ font-family: "Lucida Grande", Tahoma;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+        margin-top: 10px;
+ text-align: center;
+}
+
+.button{
+	font-size: 8px;
+	        font-family: "Lucida Grande", Tahoma;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+ color: black;
+        margin-top: 10px;
+ text-align: center;
+}
+
+.button2{
+	font-size: 8px;
+	        font-family: "Lucida Grande", Tahoma;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+ color: black;
+        margin-top: 10px;
+ text-align: center;
+}
+
+text{
+	font-family: FontAwesome;
+}
+
+    svg {
+        position: center;
+        margin-left: 3em;
+        margin-top: 3em;
+    }
+
+    path.slice{
+        stroke-width:2px;
+    }
+
+    text{
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    polyline{
+        opacity: .3;
+        stroke: black;
+        stroke-width: 2px;
+        fill: none;
+    }
+
+    .labelValue
+    {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 60%;
+        opacity: .5;
+
+    }
+
+    label {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: normal;
+    }
+
+    .toolTip {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        position: absolute;
+        display: none;
+        width: auto;
+        height: auto;
+        background: none repeat scroll 0 0 white;
+        border: 0 none;
+        border-radius: 8px 8px 8px 8px;
+        box-shadow: -3px 3px 15px #888888;
+        color: black;
+        font: 12px sans-serif;
+        padding: 10px;
+        text-align: center;
+    }
+
+    rect {
+        stroke-width: 2;
+    }
+
+
+    .axis text {
+    	 font-size: 8px;
+    	 font-family: "Lucida Grande", Tahoma;
+       font-weight: lighter;
+       font-variant: normal;
+       text-transform: uppercase;
+       fill: white;
+       text-align: center;    
+   }
+
+
+    .axis path{
+        fill: none;
+        stroke: white;
+    }
+
+    .axis line {
+        fill: none;
+        stroke: white;
+        shape-rendering: crispEdges;
+    }
+
+    .axis .tick line {
+        stroke-width: 1;
+		stroke: #ffdb82;	
+	    }
+
+    .axisHorizontal path{
+        fill: none;
+    }
+
+    .axisHorizontal line {
+        fill: none;
+        stroke: white;
+        shape-rendering: crispEdges;
+    }
+
+    .axisHorizontal .tick line {
+        stroke-width: 1;
+        stroke: rgba(0, 0, 0, 0.2);
+    }
+
+    .bar {
+        fill: white;
+        fill-opacity: 0.9;
+        stroke: gray;
+        stroke-width: 1;
+    }
+
+    .x.axis path {
+        display: none;
+    }
+
+.wins
+{fill: #ffdb82; background: #ffdb82;}
+.time
+{fill: #6591ee; background: #6591ee;}
+.elims
+{fill: #d3d7e7; background: #d3d7e7;}
+.deaths
+{fill: white; background: white;}
+.gold
+{fill: #3d63da; background: #3d63da;}
+.silver
+{fill: #969da5; background: #969da5;}
+.bronze
+{fill: #c4e5ff; background: #c4e5ff;}
+.accuracy
+{fill: #ff9c1c; background: #ff9c1c;}
+
+  .legend {
+    fill: white;
+    visibility: visible;
+    font-size: 10px;
+	  font-family: "Lucida Grande", Tahoma;
+    font-weight: lighter;
+    font-variant: normal;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+  }
+
+  .graph {
+  	visibility: hidden;
+  }
+
+  .circleBarCharts{
+  	visibility: visible;
+  }
+  rect {
+    stroke-width: 2;
+  }
+
+body {
+    position: relative;
+    margin-left:15px;
+    background-color:#565971;
+}
+
+.sort, .blurb{
+	visibility: visible;
+
+}
+.blurb3, .blurb4{
+  visibility: hidden;
+}
+
+#circleBar-web-text, #circleBar-mobile-text,
+#circleBar-dva-text, #circleBar-junk-text, #circleBar-lucio-text, #circleBar-reaper-text
+, #circleBar-soldier-text, #circleBar-roadhog-text, #circleBar-pharah-text
+, #circleBar-mei-text, #circleBar-zen-text
+, #circleBar-genji-text, #circleBar-symmetra-text, #circleBar-mccree-text
+, #circleBar-tracer-text, #circleBar-sombra-text, #circleBar-torb-text
+, #circleBar-ana-text, #circleBar-winston-text
+, #circleBar-rein-text, #circleBar-bastion-text, #circleBar-zarya-text
+, #circleBar-orisa-text{
+font-family: Gill Sans, Verdana;
+ line-height: 24px;
+ text-transform: uppercase;
+ letter-spacing: -1px;
+    font-size:16px;
+    fill:white;
+}
+
+#circleBar-web-labels tspan,
+#circleBar-mobile-labels tspan,
+#circleBar-dva-labels tspan,
+#circleBar-junk-labels tspan,
+#circleBar-lucio-labels tspan, #circleBar-reaper-labels tspan
+, #circleBar-soldier-labels tspan, #circleBar-roadhog-labels tspan 
+, #circleBar-pharah-labels tspan
+, #circleBar-mei-labels tspan, #circleBar-zen-labels tspan 
+,
+#circleBar-genji-labels tspan,
+#circleBar-symmetra-labels tspan,
+#circleBar-mccree-labels tspan,
+#circleBar-tracer-labels tspan, #circleBar-sombra-labels tspan
+, #circleBar-torb-labels tspan, #circleBar-ana-labels tspan 
+, #circleBar-winston-labels tspan
+, #circleBar-rein-labels tspan, #circleBar-bastion-labels tspan 
+, #circleBar-zarya-labels tspan, #circleBar-orisa-labels tspan {
+    font-family: 'FranklinGothic-Book' "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    font-size:10px;
+    fill:white;
+}
+
+#circleBar-web-values tspan,
+#circleBar-mobile-values tspan,
+#circleBar-dva-values tspan,
+#circleBar-junk-values,
+#circleBar-lucio-values tspan , #circleBar-reaper-values tspan
+, #circleBar-soldier-values tspan, #circleBar-roadhog-values tspan, #circleBar-pharah-values tspan
+, #circleBar-mei-values tspan, #circleBar-zen-values tspan
+,
+#circleBar-genji-values tspan,
+#circleBar-symmetra-values tspan,
+#circleBar-mccree-values,
+#circleBar-tracer-values tspan , #circleBar-sombra-values tspan
+, #circleBar-torb-values tspan, #circleBar-ana-values tspan, #circleBar-winston-values tspan
+, #circleBar-rein-values tspan, #circleBar-bastion-values tspan
+, #circleBar-zarya-values tspan, #circleBar-orisa-values tspan{
+    font-family: 'FranklinGothic-Book' "Franklin Gothic Medium", "Franklin Gothic", "ITC Franklin Gothic", Arial, sans-serif;
+    font-size: 9px;
+    font-weight:bold;
+    fill:white;
+}
+#circleBar-web-values tspan {
+    fill:black;
+}
+#circleBar-mobile-values tspan,
+#circleBar-dva-values tspan,
+#circleBar-junk-values tspan,
+#circleBar-lucio-values tspan , #circleBar-reaper-values tspan
+, #circleBar-soldier-values tspan, #circleBar-roadhog-values tspan, #circleBar-pharah-values tspan
+, #circleBar-mei-values tspan, #circleBar-zen-values tspan, #circleBar-genji-values tspan,
+#circleBar-symmetra-values tspan,
+#circleBar-mccree-values tspan,
+#circleBar-tracer-values tspan , #circleBar-sombra-values tspan
+, #circleBar-torb-values tspan, #circleBar-ana-values tspan, #circleBar-winston-values tspan
+, #circleBar-rein-values tspan, #circleBar-bastion-values tspan
+, #circleBar-zarya-values tspan, #circleBar-orisa-values tspan{
+    fill:black;
+}
+
+
+    </style>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+  <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<p class="blurb2">Analyze by Hero:</p>
+<div style="margin-left: -2.3em; margin-top: -1em">
+<ul>
+  <li><Button id="All" class="button2">All</Button></li>
+  <li><Button id="Ana" class="button">Ana</Button></li>
+  <li><Button id="Bastion" class="button">Bastion</Button></li>
+  <li><Button id="DVa" class="button">D.Va</Button></li>
+  <li><Button id="Genji" class="button">Genji</Button></li>
+  <li><Button id="Hanzo" class="button">Hanzo</Button></li>
+  <li><Button id="Junkrat" class="button">Junkrat</Button></li>
+  <li><Button id="Lucio" class="button">Lucio</Button></li>
+  <li><Button id="McCree" class="button">McCree</Button></li>
+  <li><Button id="Mei" class="button">Mei</Button></li>
+  <li><Button id="Mercy" class="button">Mercy</Button></li>
+  <li><Button id="Orisa" class="button">Orisa</Button></li>
+  <li><Button id="Pharah" class="button">Pharah</Button></li>
+  <li><Button id="Reaper" class="button">Reaper</Button></li>
+  <li><Button id="Reinhardt" class="button">Reinhardt</Button></li>
+  <li><Button id="Roadhog" class="button">Roadhog</Button></li>
+  <li><Button id="Soldier" class="button">Soldier: 76</Button></li>
+  <li><Button id="Sombra" class="button">Sombra</Button></li>
+  <li><Button id="Symmetra" class="button">Symmetra</Button></li>
+  <li><Button id="Torbjorn" class="button">Torbjorn</Button></li>
+  <li><Button id="Tracer" class="button">Tracer</Button></li>
+  <li><Button id="Winston" class="button">Winston</Button></li>
+  <li><Button id="Zarya" class="button">Zarya</Button></li>
+   <li><Button id="Zenyatta" class="button">Zenyatta</Button></li>
+</ul>
+</div>
+<p class="blurb">Sort By:</p>
+<div align="left" style="margin-left: -2.3em; margin-top: -em">
+<form>
+<h4>
+    <label class="sort"><input type="radio" name="dataset" id="dataset" value="none" checked> None</label>
+    <label class="sort"><input type="radio" name="dataset" id="dataset2" value="wins"> Number of Wins</label>
+    <label class="sort"><input type="radio" name="dataset" id="dataset3" value="time"> Time Played</label>
+    <label class="sort"><input type="radio" name="dataset" id="dataset4" value="elims"> Eliminations</label>
+    <label class="sort"><input type="radio" name="dataset" id="dataset5" value="deaths"> Deaths</label>
+    <label class="sort"><input type="radio" name="dataset" id="dataset6" value="gold"> Gold Medals</label>
+    <label class="sort"><input type="radio" name="dataset" id="dataset7" value="silver"> Silver Medals</label>
+    <label class="sort"><input type="radio" name="dataset" id="dataset8" value="bronze"> Bronze Medals</label>
+    <label class="sort"><input type="radio" name="dataset" id="dataset9" value="weapon"> Weapon Accuracy</label>
+    </h4>
+</form>
+    </div>
+<div class="blurb3" align="center"><h2>Hover for details and click (or double-click) to show/hide a character.</h2></div>
+<div class="blurb4" align="center"><h2>Hover for details.</h2></div>
+
+  <svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="100%" height="3000px"
+	 overflow="visible" xml:space="preserve">
+	     <g id="graph" width=200% height=200%></g>
+
+    <g class="circleBarCharts" width=200% height=200%>
+        
+        <!-- Web Circle Bar Chart -->
+        <g id="circleBar-web-group" transform="translate(724,362)">
+          <image id="circleBar-web-icon" opacity="0" x="135" y="70" overflow="visible" width="160" height="160" xlink:href="images/hanzo.png"  />
+            <text id="circleBar-web-text" opacity="0" x="180" y="143">HANZO</text>
+            <g id="circleBar-web-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-web-clipPath">
+                <rect id="circleBar-web-clipLabels" x="205" y="215" width="180" height="0"></rect>
+            </clippath>
+            <g id="circleBar-web-legend" clip-path="url(#circleBar-web-clipPath)">
+                <text id="circleBar-web-values" transform="translate(222,225)"></text>
+                <text id="circleBar-web-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Web Circle Bar Chart -->
+    
+        <!-- Mobile Circle Bar Chart -->
+        <g id="circleBar-mobile-group" transform="translate(362,1086)">
+            <image id="circleBar-mobile-icon"  opacity="0" x="135" y="70" overflow="visible" width="160" height="160" xlink:href="images/mercy.png" />
+            <text id="circleBar-mobile-text" opacity="0" x="187" y="155">MERCY</text>
+            <g id="circleBar-mobile-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-mobile-clipPath">
+                <rect id="circleBar-mobile-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-mobile-legend" clip-path="url(#circleBar-mobile-clipPath)">
+                <text id="circleBar-mobile-values" transform="translate(222,225)"></text>
+                <text id="circleBar-mobile-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+                <!-- Mobile Circle Bar Chart -->
+        <g id="circleBar-dva-group" transform="translate(0,362)">
+            <image id="circleBar-dva-icon" opacity="0" x="135" y="65" overflow="visible" width="160" height="160" xlink:href="images/dva.png" />
+            <text id="circleBar-dva-text" opacity="0" x="187" y="155">D.VA</text>
+            <g id="circleBar-dva-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-dva-clipPath">
+                <rect id="circleBar-dva-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-dva-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-dva-values" transform="translate(222,225)"></text>
+                <text id="circleBar-dva-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+
+                        <!-- Mobile Circle Bar Chart -->
+        <g id="circleBar-junk-group" transform="translate(0,724)">
+            <image id="circleBar-junk-icon" opacity="0" x="135" y="70" overflow="visible" width="160" height="160" xlink:href="images/junkrat.png" />
+            <text id="circleBar-junk-text" opacity="0" x="187" y="155">JUNKRAT</text>
+            <g id="circleBar-junk-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-junk-clipPath">
+                <rect id="circleBar-junk-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-junk-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-junk-values" transform="translate(222,225)"></text>
+                <text id="circleBar-junk-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+                                <!-- Mobile Circle Bar Chart -->
+        <g id="circleBar-lucio-group" transform="translate(362,724)">
+            <image id="circleBar-lucio-icon"  opacity="0" x="135" y="70" overflow="visible" width="160" height="160" xlink:href="images/lucio.png"/>
+            <text id="circleBar-lucio-text" opacity="0" x="187" y="155">LUCIO</text>
+            <g id="circleBar-lucio-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-lucio-clipPath">
+                <rect id="circleBar-lucio-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-lucio-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-lucio-values" transform="translate(222,225)"></text>
+                <text id="circleBar-lucio-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+                <g id="circleBar-reaper-group" transform="translate(362,1448)">
+            <image id="circleBar-reaper-icon" opacity="0" x="135" y="70" overflow="visible" width="160" height="160" xlink:href="images/reaper.png" />
+            <text id="circleBar-reaper-text" opacity="0" x="187" y="155">REAPER</text>
+            <g id="circleBar-reaper-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-reaper-clipPath">
+                <rect id="circleBar-reaper-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-reaper-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-reaper-values" transform="translate(222,225)"></text>
+                <text id="circleBar-reaper-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+                <g id="circleBar-soldier-group" transform="translate(362,1810)">
+            <image id="circleBar-soldier-icon" opacity="0" x="135" y="70" overflow="visible" width="160" height="160" xlink:href="images/soldier.png" />
+            <text id="circleBar-soldier-text" opacity="0" x="187" y="155">SOLDIER: 76</text>
+            <g id="circleBar-soldier-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-soldier-clipPath">
+                <rect id="circleBar-soldier-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-soldier-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-soldier-values" transform="translate(222,225)"></text>
+                <text id="circleBar-soldier-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+        <g id="circleBar-roadhog-group" transform="translate(0,1810)">
+            <image id="circleBar-roadhog-icon" opacity="0" x="135" y="70" overflow="visible" width="160" height="160" xlink:href="images/roadhog.png" />
+            <text id="circleBar-roadhog-text" opacity="0" x="187" y="155">ROADHOG</text>
+            <g id="circleBar-roadhog-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-roadhog-clipPath">
+                <rect id="circleBar-roadhog-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-roadhog-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-roadhog-values" transform="translate(222,225)"></text>
+                <text id="circleBar-roadhog-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+        <g id="circleBar-pharah-group" transform="translate(0,1448)">
+            <image id="circleBar-pharah-icon" opacity="0" x="130" y="70" overflow="visible" width="160" height="160" xlink:href="images/pharah.png"  />
+            <text id="circleBar-pharah-text" opacity="0" x="187" y="155">PHARAH</text>
+            <g id="circleBar-pharah-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-pharah-clipPath">
+                <rect id="circleBar-pharah-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-pharah-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-pharah-values" transform="translate(222,225)"></text>
+                <text id="circleBar-pharah-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+                <g id="circleBar-mei-group" transform="translate(0,1086)">
+            <image id="circleBar-mei-icon"  opacity="0" x="135" y="70" overflow="visible" width="160" height="160" xlink:href="images/mei.png"/>
+            <text id="circleBar-mei-text" opacity="0" x="210" y="155">MEI</text>
+            <g id="circleBar-mei-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-mei-clipPath">
+                <rect id="circleBar-mei-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-mei-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-mei-values" transform="translate(222,225)"></text>
+                <text id="circleBar-mei-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+                <g id="circleBar-zen-group" transform="translate(362,2534)">
+            <image id="circleBar-zen-icon" opacity="0" x="135" y="77" overflow="visible" width="160" height="160" xlink:href="images/zen.png"/>
+            <text id="circleBar-zen-text" opacity="0" x="187" y="155">ZENYATTA</text>
+            <g id="circleBar-zen-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-zen-clipPath">
+                <rect id="circleBar-zen-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-zen-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-zen-values" transform="translate(222,225)"></text>
+                <text id="circleBar-zen-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+                        <g id="circleBar-genji-group" transform="translate(362,362)">
+            <image id="circleBar-genji-icon" opacity="0" x="130" y="70" overflow="visible" width="160" height="160" xlink:href="images/genji.png"  />
+            <text id="circleBar-genji-text" opacity="0" x="195" y="155">GENJI</text>
+            <g id="circleBar-genji-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-genji-clipPath">
+                <rect id="circleBar-genji-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-genji-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-genji-values" transform="translate(222,225)"></text>
+                <text id="circleBar-genji-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+                        <g id="circleBar-symmetra-group" transform="translate(724,1810)">
+            <image id="circleBar-symmetra-icon" opacity="0" x="130" y="80" overflow="visible" width="160" height="160" xlink:href="images/symmetra.png" />
+            <text id="circleBar-symmetra-text" opacity="0" x="173" y="155">SYMMETRA</text>
+            <g id="circleBar-symmetra-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-symmetra-clipPath">
+                <rect id="circleBar-symmetra-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-symmetra-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-symmetra-values" transform="translate(222,225)"></text>
+                <text id="circleBar-symmetra-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+                        <g id="circleBar-mccree-group" transform="translate(724,724)">
+            <image id="circleBar-mccree-icon"  opacity="0" x="135" y="70" overflow="visible" width="160" height="160" xlink:href="images/mccree.png" />
+            <text id="circleBar-mccree-text" opacity="0" x="187" y="155">MCCREE</text>
+            <g id="circleBar-mccree-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-mccree-clipPath">
+                <rect id="circleBar-mccree-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-mccree-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-mccree-values" transform="translate(222,225)"></text>
+                <text id="circleBar-mccree-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+
+
+                        <g id="circleBar-tracer-group" transform="translate(362,2172)">
+            <image id="circleBar-tracer-icon" opacity="0" x="135" y="65" overflow="visible" width="160" height="160" xlink:href="images/tracer.png" />
+            <text id="circleBar-tracer-text" opacity="0" x="187" y="155">TRACER</text>
+            <g id="circleBar-tracer-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-tracer-clipPath">
+                <rect id="circleBar-tracer-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-tracer-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-tracer-values" transform="translate(222,225)"></text>
+                <text id="circleBar-tracer-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+                        <g id="circleBar-sombra-group" transform="translate(724,2534)">
+            <image id="circleBar-sombra-icon" opacity="0" x="135" y="75" overflow="visible" width="160" height="160" xlink:href="images/sombra.png" />
+            <text id="circleBar-sombra-text" opacity="0" x="187" y="155">SOMBRA</text>
+            <g id="circleBar-sombra-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-sombra-clipPath">
+                <rect id="circleBar-sombra-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-sombra-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-sombra-values" transform="translate(222,225)"></text>
+                <text id="circleBar-sombra-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+                        <g id="circleBar-torb-group" transform="translate(0,2172)">
+            <image id="circleBar-torb-icon" opacity="0" x="135" y="65" overflow="visible" width="160" height="160" xlink:href="images/torb.png"  />
+            <text id="circleBar-torb-text" opacity="0" x="187" y="155">TORBJORN</text>
+            <g id="circleBar-torb-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-torb-clipPath">
+                <rect id="circleBar-torb-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-torb-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-torb-values" transform="translate(222,225)"></text>
+                <text id="circleBar-torb-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+
+                        <g id="circleBar-ana-group" transform="translate(0,0)">
+            <image id="circleBar-ana-icon" opacity="0" x="135" y="75" overflow="visible" width="160" height="160" xlink:href="images/ana.png" />
+            <text id="circleBar-ana-text" opacity="0" x="200" y="155">ANA</text>
+            <g id="circleBar-ana-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-ana-clipPath">
+                <rect id="circleBar-ana-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-ana-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-ana-values" transform="translate(222,225)"></text>
+                <text id="circleBar-ana-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+                        <g id="circleBar-winston-group" transform="translate(724,2172)">
+            <image id="circleBar-winston-icon" opacity="0" x="135" y="75" overflow="visible" width="160" height="160" xlink:href="images/winston.png"  />
+            <text id="circleBar-winston-text" opacity="0" x="187" y="155">WINSTON</text>
+            <g id="circleBar-winston-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-winston-clipPath">
+                <rect id="circleBar-winston-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-winston-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-winston-values" transform="translate(222,225)"></text>
+                <text id="circleBar-winston-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+                        <g id="circleBar-rein-group" transform="translate(724,1448)">
+            <image id="circleBar-rein-icon" opacity="0" x="135" y="70" overflow="visible" width="160" height="160" xlink:href="images/rein.png" />
+            <text id="circleBar-rein-text" opacity="0" x="165" y="155">REINHARDT</text>
+            <g id="circleBar-rein-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-rein-clipPath">
+                <rect id="circleBar-rein-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-rein-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-rein-values" transform="translate(222,225)"></text>
+                <text id="circleBar-rein-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+
+                        <g id="circleBar-bastion-group" transform="translate(362,0)">
+            <image id="circleBar-bastion-icon" opacity="0" x="143" y="80" overflow="visible" width="160" height="160" xlink:href="images/bastion.png" />
+            <text id="circleBar-bastion-text" opacity="0" x="187" y="155">BASTION</text>
+            <g id="circleBar-bastion-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-bastion-clipPath">
+                <rect id="circleBar-bastion-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-bastion-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-bastion-values" transform="translate(222,225)"></text>
+                <text id="circleBar-bastion-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+                        <g id="circleBar-zarya-group" transform="translate(0,2534)">
+            <image id="circleBar-zarya-icon" opacity="0" x="135" y="70" overflow="visible" width="160" height="160" xlink:href="images/zarya.png" />
+            <text id="circleBar-zarya-text" opacity="0" x="195" y="155">ZARYA</text>
+            <g id="circleBar-zarya-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-zarya-clipPath">
+                <rect id="circleBar-zarya-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-zarya-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-zarya-values" transform="translate(222,225)"></text>
+                <text id="circleBar-zarya-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+
+                        <g id="circleBar-orisa-group" transform="translate(724,1086)">
+            <image id="circleBar-orisa-icon" opacity="0" x="120" y="70" overflow="visible" width="160" height="160" xlink:href="images/orisa.png" />
+            <text id="circleBar-orisa-text" opacity="0" x="195" y="155">ORISA</text>
+            <g id="circleBar-orisa-chart" transform="translate(215,150)"></g>
+            <clippath id="circleBar-orisa-clipPath">
+                <rect id="circleBar-orisa-clipLabels" x="205" y="215" width="150" height="0"></rect>
+            </clippath>
+            <g id="circleBar-orisa-legend" clip-path="url(#circleBar-dva-clipPath)">
+                <text id="circleBar-orisa-values" transform="translate(222,225)"></text>
+                <text id="circleBar-orisa-labels" transform="translate(277,225)"></text>
+            </g>
+        </g>
+        <!-- END: Mobile Circle Bar Chart -->
+    </g>
+	 
+</svg>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script  src="js/assn1.js"></script>
+</body>
+</html>
+
+<!--
+#3d63da : dark blue
+#6591ee : lighter blue
+#d3d7e7 : whitish
+#565971 : black
+#ffd267 : yellow/orange 
+-->

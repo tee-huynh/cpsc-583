@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'delius';
+  src: url('fonts/deliusunicase-regular.ttf');
+}
+
+@font-face {
+  font-family: 'CaviarDreamsBold';
+  src: url('fonts/Caviar_Dreams_Bold.ttf');
+}
+
+.panel-heading {
+  white-space: nowrap;
+  position: absolute;
+  right: 100%;
+  transform-origin: top right 0;
+  transform: rotate( 270deg );
+  opacity: 0.5;
+}
+.panel-heading2 {
+  white-space: nowrap;
+  position: absolute;
+  margin-top: 5em;
+  right: 94%;
+  transform-origin: top right 0;
+  transform: rotate( 270deg );
+}
+
+h1 { 
+  color: black; 
+  font-family: 'delius'; 
+  font-size: 30px; 
+  font-weight: 200; 
+  line-height: 40px;
+  letter-spacing: -2px;
+  text-align: center; 
+}
+
+h2 { 
+  color: #FFC0BE; 
+  font-family: 'CaviarDreams'; 
+  font-size: 70px; 
+  font-weight: 300; 
+  line-height: 58px;
+  letter-spacing: 35px;
+  text-align: center; 
+}
+
+h4 {
+	color: #725756	; 
+  font-family: 'CaviarDreams'; 
+  font-size: 24px; 
+  font-weight: 300; 
+  line-height: 30px;
+  letter-spacing: 4px;
+  text-align: center; 
+  margin-left: 10em;
+  margin-right: 10em;
+  margin-top: 12em;
+  margin-bottom: 12em;
+}
+
+#background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 83%;
+    height: 115%;
+    background-color: #ffffff; 
+}
+
+#footer-back {
+    position: absolute;
+    bottom: -20;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background-color: #FFC0BE; 
+}
+
+span {
+  display: inline-block;
+}
+
+.my-icon{
+  line-height:40px;
+}

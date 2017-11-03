@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+h1{
+font-family: Gill Sans, Verdana;
+ font-size: 30px;
+ line-height: 24px;
+ text-transform: uppercase;
+ letter-spacing: -3px;
+ color: white;
+}
+
+h2{ 
+ font-family: "Lucida Grande", Tahoma;
+ font-size: 10px;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+ color: white;
+ margin-top: 10px;
+ letter-spacing: 0.3em;
+ padding-left: 20em;
+ padding-right: 20em;
+}
+
+    .link {
+        fill: none;
+        stroke: white;
+        stroke-opacity: 0.9;
+        stroke-width: 1px;
+    }
+    text {
+    font-size: 8px;
+      font-family: "Lucida Grande", Tahoma;
+    font-weight: lighter;
+    font-variant: normal;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 2px;
+    }
+
+    .xAxis .tick text{
+        fill: white;
+    }
+    .grid .tick line{
+        stroke: grey;
+        stroke-dasharray: 5, 10;
+        opacity: 0.7;
+    }
+    .grid path{
+        stroke-width: 0;
+    }
+
+    .node circle {
+        fill: #999;
+    }
+    .node--internal circle {
+        fill: #555;
+    }
+    .node--internal text {
+        font-size: 16px;
+        text-shadow: 0 2px 0 #fff, 0 -2px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff;
+    }
+    .node--leaf text {
+        fill: white;
+    }
+    .ballG text {
+        fill: white;
+    }
+
+    .shadow {
+        -webkit-filter: drop-shadow( -1.5px -1.5px 1.5px #000 );
+        filter: drop-shadow( -1.5px -1.5px 1.5px #000 );
+    }
+    
+    .tree{
+        visibility: visible;
+    }
+    .cluster{
+        visibility: visible;
+    }
+    .link {
+        fill: none;
+        stroke: #555;
+        stroke-opacity: 0.4;
+        stroke-width: 1.5px;
+    }
+    
+    path { 
+        stroke: white;
+        stroke-width: 1;
+        fill: none;
+    }
+
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: grey;
+        stroke-width: 1;
+    }
+
+
+.container {
+  float: left;
+}
+.container2 {
+  float: right;
+}
+
+#m0916 {
+    background-color: pink;
+    font-size: 10px;
+}
+#m1016 {
+    background-color: white;
+    font-size: 10px;
+}
+#m1116 {
+    background-color: white;
+    font-size: 10px;
+}
+#m1216 {
+    background-color: white;
+    font-size: 10px;
+}
+#m0117 {
+    background-color: white;
+    font-size: 10px;
+}
+#m0217 {
+    background-color: white;
+    font-size: 10px;
+}
+#m0217 {
+    background-color: white;
+    font-size: 10px;
+}
+#m0317 {
+    background-color: white;
+    font-size: 10px;
+}
+#m0417 {
+    background-color: white;
+    font-size: 10px;
+}
+#m0517 {
+    background-color: white;
+    font-size: 10px;
+}
+#m0617 {
+    background-color: white;
+    font-size: 10px;
+}
+#m0717 {
+    background-color: white;
+    font-size: 10px;
+}
+#m0817 {
+    background-color: white;
+    font-size: 10px;
+}
+#m0917 {
+    background-color: white;
+    font-size: 10px;
+}
+
+div.tooltip {   
+    position: absolute;         
+    text-align: center;         
+    width: 60px;                    
+    height: 28px;                   
+    padding: 2px;               
+    font: 12px sans-serif;      
+    background: lightsteelblue; 
+    border: 0px;        
+    border-radius: 8px;         
+    pointer-events: none;           
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.button, .button2, .button3, .button4, .button5, .button6, .button7, .button8, .button9, .button10, .button11, .button12, .button13{
+    font-size: 8px;
+            font-family: "Lucida Grande", Tahoma;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+ color: black;
+        margin-top: 10px;
+ text-align: center;
+ background-color: white;
+}
+
+.buttonreset{
+    font-size: 18px;
+            font-family: "Lucida Grande", Tahoma;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+ color: black;
+        margin-top: 10px;
+ text-align: center;
+ background-color: white;
+ visibility: hidden;
+}
+
+ul li {
+  display: inline-block;
+}
+
+.dates{
+    visibility: visible;
+
+}
+.blurb{
+    visibility: hidden;
+}
+
+.focus circle {
+  fill: none;
+  stroke: steelblue;
+}
+</style>
+
+<body style="background-color: #3d3d3d"><br/>
+<h1 align="center"> MY MOBILE DATA USAGE </h1>
+<h2 align="center">This tool visualizes my personal mobile data usage over the past year. Measured in megabytes (MB), the following statistics include how much data has been used for each application on my phone from September 2016 to September 2017.</h2>
+<h2 align="right">Tina Huynh</h2>
+<script src="js/d3.v4.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<div align="left" style="margin-top: 0em">
+<form>
+<h2 style="padding-left: 2em">
+    <label class="sort"><input type="radio" name="dataset" id="dataset" value="tree" checked> View by Month</label>
+    <label class="sort"><input type="radio" name="dataset" id="dataset2" value="radialcluster"> View by App <script src="js/d3.v4.js"></script>
+</label>
+    </h4>
+</form>
+    </div>
+
+<div align="center" class="blurb" style="margin-top: em;"><br/>
+<h2 style="padding-left:23em;">Click an application name to see a timeline of mobile data usage for that app.<br/>
+Multiple applications can be compared, simply just click the ones you want to see and unclick when you want it to disappear. Click the reset button to refresh the graph.</h2></div>  
+
+<div class="dates" align="center" style="margin-left: -5.3em; margin-top: -1em">
+<ul>
+  <li><Button id="m0916" class="button">Sep 2016</Button></li>
+  <li><Button id="m1016" class="button2">Oct 2016</Button></li>
+  <li><Button id="m1116" class="button3">Nov 2016</Button></li>
+  <li><Button id="m1216" class="button4">Dec 2016</Button></li>
+  <li><Button id="m0117" class="button5">Jan 2017</Button></li>
+  <li><Button id="m0217" class="button6">Feb 2017</Button></li>
+  <li><Button id="m0317" class="button7">Mar 2017</Button></li>
+  <li><Button id="m0417" class="button8">Apr 2017</Button></li>
+  <li><Button id="m0517" class="button9">May 2017</Button></li>
+  <li><Button id="m0617" class="button10">Jun 2017</Button></li>
+  <li><Button id="m0717" class="button11">Jul 2017</Button></li>
+  <li><Button id="m0817" class="button12">Aug 2017</Button></li>
+  <li><Button id="m0917" class="button13">Sep 2017</Button></li>
+</ul><div align="center">
+<h2 style="padding-left:23em;">Hover over application name or corresponding bar for details</h2></div>
+</div><br/><br/>  
+    <svg width="1000" height="1100" id="tree"></svg>
+
+ <div class="container" id="chart1">
+<svg width="0" height="0" id="cluster"> <div class="container2" id="chart2" style="margin-right: 2em;">
+    <svg width="0" height="0" id="line"></svg>
+</div>   </svg><div align="left" style="margin-left: 4em;"><Button class="buttonreset">Reset</Button><br/><br/></div></div>   
+ 
+
+  <script  src="js/assn2.js"></script>
+
+</body>
