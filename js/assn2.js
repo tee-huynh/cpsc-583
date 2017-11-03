@@ -22,7 +22,7 @@ var hover = true;
 
     var svg1 = d3.select("#tree"),
             width = 1000,
-            height = 1100,
+            height = 1100 - 100,
             g = svg1.append("g").attr("transform", "translate(100,50)");       // move right 20px.
 
     // x-scale and x-axis
@@ -121,7 +121,7 @@ var hover = true;
                 .style("fill", "white")
 
                 .style("stroke", "white")
-                .style("stroke-width", "0.5px")
+                .style("stroke-width", "0.1px")
 
                 .text(function (d) {
                     return d.data.id.substring(d.data.id.lastIndexOf(".") + 1);
@@ -261,7 +261,7 @@ d3.csv("files/circular2.csv", function(error, data) {
                 .style("fill", "white")
 
                 .style("stroke", "white")
-                .style("stroke-width", "0.5px")
+                .style("stroke-width", "0.1px")
      
       .attr("x", function(d) { return d.x < 180 === !d.children ? 6 : -6; })
       .style("text-anchor", function(d) { return d.x < 180 === !d.children ? "start" : "end"; })
