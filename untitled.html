@@ -165,23 +165,6 @@ h2{
     font-size: 10px;
 }
 
-div.tooltip {   
-    position: absolute;         
-    text-align: center;         
-    width: 60px;                    
-    height: 28px;                   
-    padding: 2px;               
-    font: 12px sans-serif;      
-    background: lightsteelblue; 
-    border: 0px;        
-    border-radius: 8px;         
-    pointer-events: none;           
-}
-
-.overlay {
-  fill: none;
-  pointer-events: all;
-}
 
 .button, .button2, .button3, .button4, .button5, .button6, .button7, .button8, .button9, .button10, .button11, .button12, .button13{
     font-size: 8px;
@@ -195,19 +178,6 @@ div.tooltip {
  background-color: white;
 }
 
-.buttonreset{
-    font-size: 14px;
-            font-family: "Lucida Grande", Tahoma;
- font-weight: lighter;
- font-variant: normal;
- text-transform: uppercase;
- color: black;
-        margin-top: 10px;
- text-align: center;
- background-color: white;
- visibility: hidden;
-}
-
 ul li {
   display: inline-block;
 }
@@ -216,13 +186,9 @@ ul li {
     visibility: visible;
 
 }
-.blurb{
-    visibility: hidden;
-}
 
-.focus circle {
-  fill: none;
-  stroke: steelblue;
+.blurb{
+    visibility: visible;
 }
 </style>
 
@@ -239,6 +205,9 @@ ul li {
     <label class="sort"><input type="radio" name="dataset" id="dataset2" value="radialcluster"> View by App <script src="js/d3.v4.js"></script>
 </label>
     </h4>
+
+<div align="center">
+<h2>Hover over application name or corresponding bar for details</h2></div>   
 </form>
     </div>
 <div class="dates" align="center" style="margin-left: -5.3em; margin-top: -1em">
@@ -257,19 +226,14 @@ ul li {
   <li><Button id="m0817" class="button12">Aug 2017</Button></li>
   <li><Button id="m0917" class="button13">Sep 2017</Button></li>
 </ul><div align="center">
-<h2 style="padding-left:23em;">Hover over application name or corresponding bar for details</h2></div>
-</div><br/><br/>
+<h2 style="padding-left:23em">Hover over application name or corresponding bar for details</h2></div>
+</div>
     <svg width="1000" height="1100" id="tree"></svg>
-
  <div class="container" id="chart1">
 <svg width="0" height="0" id="cluster"> <div class="container2" id="chart2" style="margin-right: 2em;">
     <svg width="0" height="0" id="line"></svg>
 </div>   </svg></div>   
-  <div align="left" style="padding-left: 8em;"><Button class="buttonreset">Reset</Button><br/><br/></div>
 
-<div align="center" class="blurb" style="margin-top: em;">
-<h2 style="padding-left:23em;">Click an application name to see a timeline of mobile data usage for that app.<br/>
-Multiple applications can be compared, simply just click the ones you want to see and unclick when you want it to disappear.<br/>Click the reset button to refresh the graph.</h2></div>
 
   <script  src="js/assn2.js"></script>
 
