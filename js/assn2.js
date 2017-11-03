@@ -121,7 +121,7 @@ var hover = true;
                 .style("fill", "white")
 
                 .style("stroke", "white")
-                .style("stroke-width", "0.1px")
+                .style("stroke-width", "0.5px")
 
                 .text(function (d) {
                     return d.data.id.substring(d.data.id.lastIndexOf(".") + 1);
@@ -261,7 +261,7 @@ d3.csv("files/circular2.csv", function(error, data) {
                 .style("fill", "white")
 
                 .style("stroke", "white")
-                .style("stroke-width", "0.1px")
+                .style("stroke-width", "0.5px")
      
       .attr("x", function(d) { return d.x < 180 === !d.children ? 6 : -6; })
       .style("text-anchor", function(d) { return d.x < 180 === !d.children ? "start" : "end"; })
