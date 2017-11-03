@@ -22,7 +22,7 @@ var hover = true;
 
     var svg1 = d3.select("#tree"),
             width = 1000,
-            height = 1100 - 100,
+            height = 1100,
             g = svg1.append("g").attr("transform", "translate(100,50)");       // move right 20px.
 
     // x-scale and x-axis
