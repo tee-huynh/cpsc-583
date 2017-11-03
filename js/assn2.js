@@ -1,3 +1,9 @@
+//CPSC583 PROJECT 2
+//Tina Huynh
+//10131151
+//Links to credit are given in README.txt
+
+// RESET FORM ON REFRESH
 $(document).ready(function () {
     resetForms();
 });
@@ -8,17 +14,18 @@ function resetForms() {
     }
 }
 
+//VARIABLES
 var clicked = false;
 var first = false;
 var hover = true;
-                    var id;
-                    var newOpacity = 0;
-                    var size = "";
-                    var col = "";
+var id;
+var newOpacity = 0;
+var size = "";
+var col = "";
 
-// main svg
-
-    function drawTree(string){
+//BY MONTH VISUALIZAION
+//DENDROGRAM + BAR CHART
+function drawTree(string){
 
     var svg1 = d3.select("#tree"),
             width = 1000,
@@ -33,17 +40,16 @@ var hover = true;
     var xScale =  d3.scaleLinear()
             .domain([0,6])
             .range([0, 400]);
-
     var xAxis = d3.axisTop()
             .scale(xScale)
             .ticks(5)
             .tickFormat(formatSkillPoints);
 
     // Setting up a way to handle the data
-    var tree = d3.cluster()                 // This D3 API method setup the Dendrogram datum position.
-            .size([height, width - 650])    // Total width - bar chart width = Dendrogram chart width
+    var tree = d3.cluster()                             // This D3 API method setup the Dendrogram datum position.
+            .size([height, width - 650])                // Total width - bar chart width = Dendrogram chart width
             .separation(function separate(a, b) {
-                return a.parent == b.parent            // 2 levels tree grouping for category
+                return a.parent == b.parent             // 2 levels tree grouping for category
                 || a.parent.parent == b.parent
                 || a.parent == b.parent.parent ? 0.4 : 0.8;
             });
@@ -51,13 +57,11 @@ var hover = true;
     var stratify = d3.stratify()            // This D3 API method gives cvs file flat data array dimensions.
             .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
 
-
     d3.csv(string, row, function(error, data) {
         if (error) throw error;
 
         var root = stratify(data);
         tree(root);
-
 
         // Draw every datum a line connecting to its parent.
         var link = g.selectAll(".link")
@@ -134,7 +138,7 @@ var hover = true;
                     .attr("transform", "translate(" + 7 + "," + -115 + ")")
                     .call(xAxis);
 
-            // tick mark for x-axis
+        // tick mark for x-axis
             firstEndNode.insert("g")
                     .attr("class", "grid")
                     .attr("transform", "translate(7," + (height - 110) + ")")
@@ -166,8 +170,8 @@ var hover = true;
         d3.selectAll(".node--leaf-g")
                 .on("mouseover", handleMouseOver)
                 .on("mouseout", handleMouseOut);
-       
 
+        // HOVER OVER BARS OR TEXT
         function handleMouseOver(d) {
             var leafG = d3.select(this);
 
@@ -209,19 +213,21 @@ var hover = true;
 
 }
 
+// DRAWS RADIAL CLUSTER FOR "BY APP" VIEWING AS A LEGEND
  function drawCluster(){
     var svg = d3.select("#cluster"),
     width = 600,
     height = 500,
     g = svg.append("g").attr("transform", "translate(" + (width / 2 + 30) + "," + (height / 2 + 25) + ")");
 
-var stratify = d3.stratify()
+    var stratify = d3.stratify()
     .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
 
-var tree = d3.cluster()
+    var tree = d3.cluster()
     .size([360, 180])
     .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
 
+// parse file
 d3.csv("files/circular2.csv", function(error, data) {
   if (error) throw error;
 
@@ -246,32 +252,30 @@ d3.csv("files/circular2.csv", function(error, data) {
       .attr("class", function(d) { return "node" + (d.children ? " node--internal" : " node--leaf"); })
       .attr("transform", function(d) { return "translate(" + project(d.x, d.y) + ")"; });
 
+// draw nodes
   node.append("circle")
       .attr("r", 2.5)
         .style("stroke", "white")
         .style("fill", function(d){ d3.select(this); return d.data.color;});
 
+// append text to nodes
   node.append("text")
       .attr("dy", ".31em")
-            .attr("class", "namae")
-
+      .attr("class", "namae")
       .style("font-size", "9px")
-
-
-                .style("fill", "white")
-
-                .style("stroke", "white")
-                .style("stroke-width", "0.1px")
-     
+      .style("fill", "white")
+      .style("stroke", "white")
+      .style("stroke-width", "0.1px")
       .attr("x", function(d) { return d.x < 180 === !d.children ? 6 : -6; })
       .style("text-anchor", function(d) { return d.x < 180 === !d.children ? "start" : "end"; })
       .attr("transform", function(d) { return "rotate(" + (d.x < 180 ? d.x - 90 : d.x + 90) + ")"; })
       .text(function(d) { 
-        return d.id.substring(d.id.lastIndexOf(".") + 1); 
+      return d.id.substring(d.id.lastIndexOf(".") + 1); 
 
     })
-                .on("click", function(d) {
-                    id = d.data.number;
+            // this uses if statements to determine which text is clicked and the corresponding line graph appears
+            .on("click", function(d) {
+                id = d.data.number;
             if(id == 1){
                 d.key = "TOP";
             }
@@ -443,7 +447,7 @@ d3.csv("files/circular2.csv", function(error, data) {
             else{
                 d.key = "CHROME";
             }
-
+                // if text is clicked or unclicked, decide whether to show line or NOTICE
                 var active   = d.active ? false : true,
                 newOpacity = active ? 1 : 0; 
                 size = active ? "12px" : "9px";
@@ -462,6 +466,8 @@ function project(x, y) {
   var angle = (x - 90) / 180 * Math.PI, radius = y;
   return [radius * Math.cos(angle), radius * Math.sin(angle)];
 }
+
+// LINE GRAPH SET UP
 
 // Set the dimensions of the canvas / graph
 var margin = {top: 30, right: 20, bottom: 70, left: 50},
@@ -515,8 +521,6 @@ d3.csv("files/compare.csv", function(error, data) {
     ,"#f2d9d9","#ff80bf","#ffcce6","#85e085","#99e699","#c2f0c2","#d6f5d6","#ff8080","#ff80aa"
     ,"#ff99bb","#ff9999","#ffb3cc","#ffccdd","#ffb3b3","#ffccf2","#ffcccc","#ffe6e6","#c2f0f0","#c2d6d6","#d1e0e0","#e0ebeb"];
 
-
-
     // Loop through each symbol / key
     dataNest.forEach(function(d,i) { 
 
@@ -552,10 +556,12 @@ d3.csv("files/compare.csv", function(error, data) {
 
 }
 
+// always draws the dendrogram first
 drawTree("files/mobiledata.csv");
 drawCluster();
 var filename="";
 
+// button functions to determine which chart is drawn
   $('.button').on('click', function () {
     var self = $(this);
     var file = self.attr('id');
@@ -878,6 +884,7 @@ var filename="";
 
   });       
 
+// reset button
        $('.buttonreset').on('click', function () {
             d3.selectAll(".linegraph")
                     .transition().duration(100) 
@@ -887,7 +894,7 @@ var filename="";
 
   }); 
 
-
+// form for choosing between modes and selecting which svgs are shown
 d3.selectAll("input").on("change", choose);
 
     function choose(){
