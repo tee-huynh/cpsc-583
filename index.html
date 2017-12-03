@@ -24,7 +24,6 @@ h2{
  font-variant: normal;
  text-transform: uppercase;
  color: #262626;
- margin-top: 10px;
  letter-spacing: 0.3em;
  padding-left: 20em;
  padding-right: 20em;
@@ -60,145 +59,157 @@ text{
 line{
     stroke:#FF4F5A;
 }
-.node {
+.node{
   cursor: pointer;
-  stroke: #3182bd;
+  fill: white;
+}
+
+.node text {
+  font: 10px sans-serif;
+  pointer-events: none;
+  text-anchor: middle;
+}
+
+line.link {
+  fill: none;
+  stroke: #9ecae1;
   stroke-width: 1.5px;
 }
 
-.link {
-  fill: none;
-  stroke: #9ecae1;
-  stroke-width: 1px;
+ul li {
+  display: inline-block;
 }
 
+#graph{
+    float: right; position: relative; padding-right: 4em; margin-top: 2em;
+}
+
+button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.bullet { font: 10px sans-serif; }
+.bullet .marker { stroke: #184675; stroke-width: 2px; }
+.bullet .tick line { stroke: #184675; stroke-width: .5px; }
+.bullet .range.s0 { fill: #efeee8; }
+.bullet .range.s1 { fill: #d6fff2; }
+.bullet .range.s2 { fill: ##ffa0a2; }
+.bullet .range.s2 { fill: #ffc1a0; }
+.bullet .range.s2 { fill: #fff3c1; }
+.bullet .measure.s0 { fill: #f2aaa1; }
+.bullet .measure.s1 { fill: #99dac7; }
+.bullet .measure.s2 { fill: #eb5d60; }
+.bullet .measure.s3 { fill: #efdf95; }
+.bullet .measure.s4 { fill: #f0915e; }
+.bullet .title { font-size: 9px; font-weight: bold; fill: #184675 }
+.bullet .subtitle { fill: #999; }
+
+.tooltip{
+ font-family: "Lucida Grande", Tahoma;
+ font-size: 12px;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+ color: #262626;
+ letter-spacing: 0.1em;    
+}
+
+#tooltip{
+ font-family: "Lucida Grande", Tahoma;
+ font-size: 12px;
+ font-weight: lighter;
+ font-variant: normal;
+ text-transform: uppercase;
+ color: #262626;
+ letter-spacing: 0.1em;    
+}
 </style>
 
 <body style="background-color: #fffaf2"><br/>
 <h1 align="center"> MY SPENDING HABITS </h1>
-<h2 align="center">This tool visualizes my personal spending habits over the course of six months from January 2017 to June 2017. Measured in Canadian dollars ($), the following statistics include how much I have spent each month (and on what), the specific transactions, and my personal budget goal for that month.</h2>
-<h2 align="right">Tina Huynh</h2>
+<h2 align="center" style="margin-top: 10px;">This tool visualizes my personal spending habits over the course of six months from January 2017 to June 2017. Measured in Canadian dollars ($), the following statistics include how much I have spent each month (and on what), the specific transactions, and my personal budget goal for that month.</h2>
+<h2 align="right" style="margin-top: 10px;">Tina Huynh</h2>
 
-<div id="node" style="float: right; width: 500px; height:560px; position: relative; padding-right: 4em; margin-top: 6em;"></div>
-
-<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="js/d3v3.js?v=1"></script>
+<script src="bullet.js?v=1"></script>
 <script>
+var margin = {top: 5, right: 40, bottom: 20, left: 120},
+    width = 650 - margin.left - margin.right,
+    height = 50 - margin.top - margin.bottom;
 
-var width = 500,
-    height = 500,
-    root;
+var chart = d3v3.bullet()
+    .width(width)
+    .height(height);
 
-var force = d3.layout.force()
-    .size([width, height])
-    .on("tick", tick);
-
-var svg = d3.select("#node").append("svg")
-    .attr("width", width)
-    .attr("height", height);
-
-var link = svg.selectAll(".link"),
-    node = svg.selectAll(".node");
-
-d3.json("data.json", function(error, json) {
+d3v3.json("bullet.json", function(error, data) {
   if (error) throw error;
+var div = d3v3.select("#tooltip");
+var hovered = false;
+  var svg = d3v3.select("#bullet").selectAll("svg")
+      .data(data)
+    .enter().append("svg")
+      .attr("class", "bullet")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom).on("mouseover", function(d){
+                div.transition()        
+                .duration(200)      
+                .style("opacity", .9)
+         .style("left", (d3v3.pageX + 34) + "px")    //Set X  
+         .style("top", (d3v3.pageY - 12) + "px");  //Set Y;      
+            div.html(d.info + "<br/><br/>");
+            hovered = true;   
+        }).on("mouseout", function(d){
+                div.transition()
+                .duration(200)      
+                .style("opacity", 0);
+        })
+    .append("g")
+      .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+      .call(chart);
 
-  root = json;
-  update();
+  var title = svg.append("g")
+      .style("text-anchor", "end")
+      .attr("transform", "translate(-6," + height / 2 + ")");
+
+  title.append("text")
+      .attr("class", "title")
+      .text(function(d) { return d.title; });
+
+  d3v3.selectAll("button").on("click", function() {
+    svg.datum(randomize).call(chart.duration(1000)); // TODO automatic transition
+  });
 });
 
-function update() {
-  var nodes = flatten(root),
-      links = d3.layout.tree().links(nodes);
-
-  // Restart the force layout.
-  force
-      .nodes(nodes)
-      .links(links)
-      .start();
-
-  // Update the links…
-  link = link.data(links, function(d) { return d.target.id; });
-
-  // Exit any old links.
-  link.exit().remove();
-
-  // Enter any new links.
-  link.enter().insert("line", ".node")
-      .attr("class", "link")
-      .attr("x1", function(d) { return d.source.x; })
-      .attr("y1", function(d) { return d.source.y; })
-      .attr("x2", function(d) { return d.target.x; })
-      .attr("y2", function(d) { return d.target.y; });
-
-  // Update the nodes…
-  node = node.data(nodes, function(d) { return d.id; }).style("fill", color);
-
-  // Exit any old nodes.
-  node.exit().remove();
-
-  // Enter any new nodes.
-  node.enter().append("circle")
-      .attr("class", "node")
-      .attr("cx", function(d) { return d.x; })
-      .attr("cy", function(d) { return d.y; })
-      .attr("r", function(d) { return Math.sqrt(d.size) / 10 || 4.5; })
-      .style("fill", color)
-      .on("click", click)
-      .call(force.drag);
+function randomize(d) {
+  if (!d.randomizer) d.randomizer = randomizer(d);
+  d.ranges = d.ranges.map(d.randomizer);
+  d.markers = d.markers.map(d.randomizer);
+  d.measures = d.measures.map(d.randomizer);
+  return d;
 }
 
-function tick() {
-  link.attr("x1", function(d) { return d.source.x; })
-      .attr("y1", function(d) { return d.source.y; })
-      .attr("x2", function(d) { return d.target.x; })
-      .attr("y2", function(d) { return d.target.y; });
-
-  node.attr("cx", function(d) { return d.x; })
-      .attr("cy", function(d) { return d.y; });
+function randomizer(d) {
+  var k = d3v3.max(d.ranges) * .2;
+  return function(d) {
+    return Math.max(0, d + k * (Math.random() - .5));
+  };
 }
-
-// Color leaf nodes orange, and packages white or blue.
-function color(d) {
-  return d._children ? "#3182bd" : d.children ? "#c6dbef" : "#fd8d3c";
-}
-
-// Toggle children on click.
-function click(d) {
-  if (!d3.event.defaultPrevented) {
-    if (d.children) {
-      d._children = d.children;
-      d.children = null;
-    } else {
-      d.children = d._children;
-      d._children = null;
-    }
-    update();
-  }
-}
-
-// Returns a list of all nodes under the root.
-function flatten(root) {
-  var nodes = [], i = 0;
-
-  function recurse(node) {
-    if (node.children) node.children.forEach(recurse);
-    if (!node.id) node.id = ++i;
-    nodes.push(node);
-  }
-
-  recurse(root);
-  return nodes;
-}
-
 </script>
 
-<script src="js/d3.v4.js"></script>
-  <script src="https://d3js.org/d3.v4.js" charset="utf-8"></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="js/d3.v4.js" charset="utf-8"></script>
+    <script src="http://dimplejs.org/dist/dimple.v2.3.0.min.js"></script>
+
 <script src="js/visis.js"></script>
 
-<div id="bar" style="float:left; position: relative;"></div>
+<div id="bar" style="float:left; position: relative; margin-top: 0em; margin-left: -2em"></div>
+<div id="bullet" style="float:right; width: 700px; height: 200px;position: relative; margin-top: -47em"><text style="margin-left: 18em;margin-top: 2px; font-size: 16px; color: #184675">BUDGETING PLAN<br/><br/><br/><br/><br/></text>
+<div id="tooltip" style="width: 700px;height:30px"> </div></div>
 
-  <script  src="js/assn3.js"></script></div>
+
+<script  src="js/assn3.js?v=1"></script>
+<h2 align="center" style="font-size: 8px; margin-top: 105em; text-align: justify"><b style="color:#ff6666">INSTRUCTIONS</b>: For the graph on the left, hover over each month to get a closer look at the distribution of spending for that month. Percentage of total amount spent overall or per month are shown.<br/><br/>For the graph on the right, hover over each month to get details on the expected spending versus the actual spending for that month.</h2><br/><br/>
 
 </body>

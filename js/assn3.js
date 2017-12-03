@@ -1,3 +1,5 @@
+var number = 0;
+
 var data=[['EatingOut', 'JAN 2017', 1.56],
 ['Groceries', 'JAN 2017', 48.86],
 ['Groceries', 'JAN 2017', 45.06],
@@ -206,12 +208,7 @@ function mouseover(d){
         bp[i].mouseover(d);
         
         g[i].selectAll(".mainBars").select(".perc")
-        .text(function(d){ return d3.format("0.0%")(d.percent)});
-
-        g[i].on('click', function () {
-            console.log(d.key);    
-        });       
-
+        .text(function(d){ return d3.format("0.0%")(d.percent)});   
     });
 }
 function mouseout(d){
@@ -224,111 +221,123 @@ function mouseout(d){
 }
 d3.select(self.frameElement).style("height", "800px");
 
-// NETWORK GRAPHS
+// Create the svg and set the dimensions
+    var svg = dimple.newSvg("#chartContainer", 590, 400);
 
-var width2 = 960,
-    height2 = 500,
-    root;
+    d3.tsv("/data/example_data.tsv", function (data) {
 
-var force = d3.layout.force()
-    .size([width2, height2])
-    .on("tick", tick);
-
-var svg2 = d3.select("#node").append("svg")
-    .attr("width", width2)
-    .attr("height", height2);
-
-var link = svg2.selectAll(".link"),
-    node = svg2.selectAll(".node");
-
-d3.json("js/data.json", function(error, json) {
-  if (error) throw error;
-
-  root = json;
-  update();
-});
-
-function update() {
-  var nodes = flatten(root),
-      links = d3.layout.tree().links(nodes);
-
-  // Restart the force layout.
-  force
-      .nodes(nodes)
-      .links(links)
-      .start();
-
-  // Update the links…
-  link = link.data(links, function(d) { return d.target.id; });
-
-  // Exit any old links.
-  link.exit().remove();
-
-  // Enter any new links.
-  link.enter().insert("line", ".node")
-      .attr("class", "link")
-      .attr("x1", function(d) { return d.source.x; })
-      .attr("y1", function(d) { return d.source.y; })
-      .attr("x2", function(d) { return d.target.x; })
-      .attr("y2", function(d) { return d.target.y; });
-
-  // Update the nodes…
-  node = node.data(nodes, function(d) { return d.id; }).style("fill", color);
-
-  // Exit any old nodes.
-  node.exit().remove();
-
-  // Enter any new nodes.
-  node.enter().append("circle")
-      .attr("class", "node")
-      .attr("cx", function(d) { return d.x; })
-      .attr("cy", function(d) { return d.y; })
-      .attr("r", function(d) { return Math.sqrt(d.size) / 10 || 4.5; })
-      .style("fill", color)
-      .on("click", click)
-      .call(force.drag);
-}
-
-function tick() {
-  link.attr("x1", function(d) { return d.source.x; })
-      .attr("y1", function(d) { return d.source.y; })
-      .attr("x2", function(d) { return d.target.x; })
-      .attr("y2", function(d) { return d.target.y; });
-
-  node.attr("cx", function(d) { return d.x; })
-      .attr("cy", function(d) { return d.y; });
-}
-
-// Color leaf nodes orange, and packages white or blue.
-function color(d) {
-  return d._children ? "#3182bd" : d.children ? "#c6dbef" : "#fd8d3c";
-}
-
-// Toggle children on click.
-function click(d) {
-  if (!d3.event.defaultPrevented) {
-    if (d.children) {
-      d._children = d.children;
-      d.children = null;
-    } else {
-      d.children = d._children;
-      d._children = null;
-    }
-    update();
-  }
-}
-
-// Returns a list of all nodes under the root.
-function flatten(root) {
-  var nodes = [], i = 0;
-
-  function recurse(node) {
-    if (node.children) node.children.forEach(recurse);
-    if (!node.id) node.id = ++i;
-    nodes.push(node);
-  }
-
-  recurse(root);
-  return nodes;
-}
+      // Add a bullet chart to the svg
+      function addBullet(x, y, height, width, measure, lowMark,
+                        highMark, compareField, keyVal,
+                        compareVal, color) {
         
+        // This is a custom algorithm to lighten the passed color, I find I can't
+        // get the results I want from the d3.rgb.brighter method.
+        function lighten(color, pct) {
+            return d3.rgb(
+                    d3.rgb(color).r + pct * (255 - d3.rgb(color).r),
+                    d3.rgb(color).g + pct * (255 - d3.rgb(color).g),
+                    d3.rgb(color).b + pct * (255 - d3.rgb(color).b)
+                );
+        }
+
+        // Create a single data row for bullet data.  Dimple doesn't
+        // quite handle bullets out of the box so we need to do some
+        // data manipulation here
+        var bData = [
+            {
+                "Metric":measure,
+                "Value":0,
+                "Low Value":lowMark,
+                "High Value":highMark,
+                "Compare Value":0
+            }
+        ];
+
+        // Add the key and compare values for coloring and pop-ups
+        bData[0][keyVal] = keyVal;
+        bData[0][compareVal] = compareVal;
+
+        // Iterate the data and put numbers into the low key or compare
+        // value fields or exclude if in neither value
+        data.forEach(function (d) {
+          if (d[compareField] === keyVal) {
+            bData[0]["Value"] += parseFloat(d[measure]);
+          } else if (d[compareField] === compareVal) {
+            bData[0]["Compare Value"] += parseFloat(d[measure]);
+          }
+        }, this);
+
+        // Create the bullet chart itself at the passed bounds
+        var bullet = new dimple.chart(svg, bData);
+        bullet.setBounds(x, y, height, width);
+
+        // Add the x and y for the main bar
+        var bY = bullet.addCategoryAxis("y", "Metric");
+        var bX = bullet.addMeasureAxis("x", "Value");
+
+        // Add a separate x axis for each measure, this is required
+        // where we want to do a series for each measure.  By passing
+        // another axis in place of the position we combine them to create
+        // a 4 measure composite.
+        var lX = bullet.addMeasureAxis(bX, "Low Value");
+        var hX = bullet.addMeasureAxis(bX, "High Value");
+        var cX = bullet.addMeasureAxis(bX, "Compare Value");
+
+        // Add a series for the marks first (the order defines)
+        // document z position - first at back, last on top
+        // NB. High/Low Mark here doesn't refer to a field in the data
+        // rather it tags the total value with a name we can use to color
+        var hm = bullet.addSeries("High Mark", dimple.plot.bar, [bY, hX]);
+        var lm = bullet.addSeries("Low Mark", dimple.plot.bar, [bY, lX]);
+        // Add the main series - keyVal is for color and tooltip
+        var b = bullet.addSeries(keyVal, dimple.plot.bar, [bY, bX]);
+        // Add the comparison series - compareVal is for color and tooltip
+        var m = bullet.addSeries(compareVal, dimple.plot.bar, [bY, cX]);
+
+        // Configure the markers as floating bars
+        m.stacked = false;
+        cX.floatingBarWidth = 2;
+
+        // Set the gaps for the bar series with a narrow main series and full
+        // width for the markers
+        hm.barGap = 0;
+        lm.barGap = 0;
+        b.barGap = 0.75;
+
+        // Assign the colors as different shades of the passed color
+        bullet.assignColor(keyVal, color);
+        bullet.assignColor(compareVal, d3.rgb(color).darker(0.5));
+        bullet.assignColor("Low Mark", lighten(color, 0.4));
+        bullet.assignColor("High Mark", lighten(color, 0.6));
+
+        // Draw the chart
+        bullet.draw();
+
+        // Once drawn we can remove titles
+        bX.titleShape.remove();
+        bY.titleShape.remove();
+
+      }
+
+      // Draw the chart for each financial metric in the data to compare
+      // Black Mesa with rival brand owner Aperture. We are coloring most
+      // measures blue, but the costs are red as they should be interperated
+      // as "less is better".  Typically the high and low marks would be target
+      // KPI bounds, the values are just hard coded for this example. A smarter
+      // means to determine axis bounds would be better but I don't want to
+      // bloat this example.
+      addBullet(100, 30, 430, 30, "Unit Sales", 2300000, 2800000, 
+        "Owner", "Aperture", "Black Mesa", "#80B1D3");
+      addBullet(100, 90, 430, 30, "Sales Value", 135000000, 145000000, 
+        "Owner", "Aperture", "Black Mesa", "#80B1D3");
+      addBullet(100, 150, 430, 30, "Cost of Sales", 200000, 300000, 
+        "Owner", "Aperture", "Black Mesa", "#FB8072");
+      addBullet(100, 210, 430, 30, "Gross Profit", 140000000, 170000000, 
+        "Owner", "Aperture", "Black Mesa", "#80B1D3");
+      addBullet(100, 270, 430, 30, "Indirect Costs", 100000000, 150000000, 
+        "Owner", "Aperture", "Black Mesa", "#FB8072");
+      addBullet(100, 330, 430, 30, "Operating Profit", 12000000, 16000000, 
+        "Owner", "Aperture", "Black Mesa", "#80B1D3");
+
+    });
