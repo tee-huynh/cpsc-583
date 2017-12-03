@@ -900,11 +900,9 @@ d3.selectAll("input").on("change", choose);
     function choose(){
         var value = this.value;
 
-        if (value == "tree"){
-            d3.select("#tree").attr("width", "1000").attr("height", "1100");
-            d3.select("#cluster").attr("width", "0").attr("height", "0");
-            d3.select("#line").attr("width", "0").attr("height", "0");
-            $(".dates").css('visibility','visible');
+        if (value == "main"){
+            d3.select("#bar").attr("width", "1000").attr("height", "1100");
+            d3.select("#bullet").attr("width", "700").attr("height", "200");
             $(".blurb").css('visibility','hidden');
             $(".buttonreset").css('visibility','hidden');
 

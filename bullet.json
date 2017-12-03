@@ -1,0 +1,8 @@
+[
+  {"title":"JAN 2017","subtitle":"US$, in thousands","ranges":[417],"measures":[11.29,27.03,108.15,238.28,406.77],"markers":[350],"info":"Expected: $350; Actual: $406.77"},
+  {"title":"FEB 2017","subtitle":"%","ranges":[330],"measures":[0, 17.84, 60.39, 294.62, 319.84],"markers":[300],"info":"Expected: $300; Actual: $319.84"},
+  {"title":"MAR 2017","subtitle":"US$, average","ranges":[350],"measures":[0,0,50.39,202.02,323.27],"markers":[300],"info":"Expected: $300; Actual: $323.27"},
+  {"title":"APR 2017","subtitle":"count","ranges":[320],"measures":[0,25.38,35.38,175.27,219.20],"markers":[300],"info":"Expected: $300; Actual: $219.20"},
+  {"title":"MAY 2017","subtitle":"out of 5","ranges":[400],"measures":[0,176.8,279.18,356.31,392.35],"markers":[300],"info":"Expected: $300; Actual: $392.35"},
+  {"title":"JUN 2017","subtitle":"out of 5","ranges":[400],"measures":[0,37.67,109.21,346.75,379.05],"markers":[350],"info":"Expected: $350; Actual: $379.05"}
+]

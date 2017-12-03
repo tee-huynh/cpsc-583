@@ -310,7 +310,7 @@ var svg2 = d3v3.select("#nodegraph").append("svg")
 var link = svg2.selectAll(".link"),
     node = svg2.selectAll(".node");
 
-d3v3.json("demo.json", function(error, json) {
+d3v3.json("data.json", function(error, json) {
   root = json;  
   start();
 });
