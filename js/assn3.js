@@ -1,14 +1,3 @@
-// RESET FORM ON REFRESH
-$(document).ready(function () {
-    resetForms();
-});
-
-function resetForms() {
-    for (i = 0; i < document.forms.length; i++) {
-        document.forms[i].reset();
-    }
-}
-
 var number = 0;
 
 var data=[['EatingOut', 'JAN 2017', 1.56],
