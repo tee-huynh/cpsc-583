@@ -1,379 +1,759 @@
 {
- "name": "flare",
+ "name": "PURCHASES",
+ "color":1,
  "children": [
   {
-   "name": "analytics",
+   "name": "JAN 2017",
+   "color":10,
+   "collapse":1,
    "children": [
     {
-     "name": "cluster",
+     "name": "JAN 03",
+     "color":3,
+     "collapse":1,
      "children": [
-      {"name": "AgglomerativeCluster", "size": 3938},
-      {"name": "CommunityStructure", "size": 3812},
-      {"name": "HierarchicalCluster", "size": 6714},
-      {"name": "MergeEdge", "size": 743}
+      {"name": "CO-OP GAS", "color": "5", "size": 1.56},
+      {"name": "SUPERSTORE", "color": "4", "size": 48.86},
+      {"name": "SUPERSTORE", "color": "4", "size": 45.06},
+      {"name": "EB GAMES", "color": "7", "size": 26.24},
+      {"name": "SUPERSTORE", "color": "4", "size": 16.42}
      ]
     },
     {
-     "name": "graph",
+     "name": "JAN 05",
+     "color":3,
+     "collapse":1,
      "children": [
-      {"name": "BetweennessCentrality", "size": 3534},
-      {"name": "LinkDistance", "size": 5731},
-      {"name": "MaxFlowMinCut", "size": 7840},
-      {"name": "ShortestPaths", "size": 5914},
-      {"name": "SpanningTree", "size": 3416}
+      {"name": "SUPERSTORE", "color": "4", "size": 40.3}
      ]
     },
     {
-     "name": "optimization",
+     "name": "JAN 09",
+     "color":3,
+     "collapse":1,
      "children": [
-      {"name": "AspectRatioBanker", "size": 7074}
+      {"name": "SPRING", "color": "7", "size": 17.0},
+      {"name": "STAPLES", "color": "7", "size": 13.78}
      ]
+    },
+    {
+     "name": "JAN 11",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "GOOD EARTH", "color": "5", "size": 7.3},
+      {"name": "WAYO KOREA", "color": "5", "size": 33.8}     ]
+    },
+    {
+     "name": "JAN 12",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "VARSITY PHARMACY", "color": "8", "size": 15.74}     
+    ]
+    },
+    {
+     "name": "JAN 13",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "SUPERSTORE", "color": "4", "size": 17.85}     
+    ]
+    },
+    {
+     "name": "JAN 16",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "ARTESANO GALLERY", "color": 7, "size": 5.2},
+      {"name": "ONE POT", "color": "5", "size": 31.68},
+      {"name": "CHATIME", "color": "5", "size": 4.46},
+      {"name": "QUICKLY", "color": "5", "size": 9.4},
+      {"name": "TEAJA", "color": "5", "size": 9.11}    
+    ]
+    },
+    {
+     "name": "JAN 18",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "CHAPTERS", "color": "7", "size": 18.9},
+      {"name": "DAIRY QUEEN", "color": "5", "size": 6.3},
+      {"name": "CREPE DELICIOUS", "color": "5", "size": 5.78}   
+    ]
+    },
+    {
+     "name": "JAN 27",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "FUSION SUSHI", "color": "5", "size": 21.89},
+      {"name": "HEXAGON", "color": "6", "size": 11.29},
+      {"name": "LAZY MONKEY", "color": "5", "size": 5.51}  
+    ]
+    },
+    {
+     "name": "JAN 30",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "STARBUCKS", "color": "5", "size": 3.94}
+    ]
     }
    ]
   },
   {
-   "name": "animate",
+   "name": "FEB 2017",
+   "color":11,
+   "collapse":1,
    "children": [
-    {"name": "Easing", "size": 17010},
-    {"name": "FunctionSequence", "size": 5842},
     {
-     "name": "interpolate",
+     "name": "FEB 01",
+     "color":3,
+     "collapse":1,
      "children": [
-      {"name": "ArrayInterpolator", "size": 1983},
-      {"name": "ColorInterpolator", "size": 2047},
-      {"name": "DateInterpolator", "size": 1375},
-      {"name": "Interpolator", "size": 8746},
-      {"name": "MatrixInterpolator", "size": 2202},
-      {"name": "NumberInterpolator", "size": 1382},
-      {"name": "ObjectInterpolator", "size": 1629},
-      {"name": "PointInterpolator", "size": 1675},
-      {"name": "RectangleInterpolator", "size": 2042}
+      {"name": "GOOD EARTH", "color": "5", "size": 5.2},
+      {"name": "DENNY'S", "color": "5", "size": 20.29}
      ]
     },
-    {"name": "ISchedulable", "size": 1041},
-    {"name": "Parallel", "size": 5176},
-    {"name": "Pause", "size": 449},
-    {"name": "Scheduler", "size": 5593},
-    {"name": "Sequence", "size": 5534},
-    {"name": "Transition", "size": 9201},
-    {"name": "Transitioner", "size": 19975},
-    {"name": "TransitionEvent", "size": 1116},
-    {"name": "Tween", "size": 6006}
+    {
+     "name": "FEB 02",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "UMI SUSHI", "color": "5", "size": 7.6},
+      {"name": "STARBUCKS", "color": "5", "size": 4.46}
+     ]
+    },
+    {
+     "name": "FEB 03",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "MCDONALD'S", "color": "5", "size": 8.48}
+     ]
+    },
+    {
+     "name": "FEB 06",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "PHO KIM VY", "color": "5", "size": 20.41},
+      {"name": "KINJO SUSHI", "color": "5", "size": 19.98},
+      {"name": "YOGEN FRUZ", "color": "5", "size": 5.2},
+      {"name": "NATIONALS", "color": "5", "size": 32}
+     ]
+    },
+    {
+     "name": "FEB 07",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "STARBUCKS", "color": "5", "size": 4.99}     
+    ]
+    },
+    {
+     "name": "FEB 09",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "THE COFFEE COMPANY", "color": "5", "size": 2.45}     
+    ]
+    },
+    {
+     "name": "FEB 17",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "SUPERSTORE", "color": "4", "size": 22.55}
+    ]
+    },
+    {
+     "name": "FEB 20",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "QUICKLY", "color": "5", "size": 10.97},
+      {"name": "GALAXY KARAOKE", "color": "6", "size": 42.55},
+      {"name": "MCDONALD'S", "color": "5", "size": 2.51}   
+    ]
+    },
+    {
+     "name": "FEB 21",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "WOW CHICKEN", "color": "5", "size": 32.9}  
+    ]
+    },
+    {
+     "name": "FEB 23",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "LAZY MONKEY", "color": "5", "size": 5.5},
+      {"name": "SUPERSTORE", "color": "4", "size": 17.82}
+    ]
+    },
+    {
+     "name": "FEB 24",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "WOW CHICKEN", "color": "5", "size": 17.31}
+    ]
+    },
+    {
+     "name": "FEB 27",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "MCDONALD'S", "color": "5", "size": 8.6}
+    ]
+    },
+    {
+     "name": "FEB 28",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "GOOD EARTH", "color": "5", "size": 2.89},
+      {"name": "U OF C BOOKSTORE", "color": "7", "size": 17.84},
+      {"name": "STARBUCKS", "color": "5", "size": 4.67},
+      {"name": "SUPERSTORE", "color": "4", "size": 2.67}    
+    ]
+    }
    ]
   },
   {
-   "name": "data",
+   "name": "MAR 2017",
+   "color":12,
+   "collapse":1,
    "children": [
     {
-     "name": "converters",
+     "name": "MAR 01",
+     "color":3,
+     "collapse":1,
      "children": [
-      {"name": "Converters", "size": 721},
-      {"name": "DelimitedTextConverter", "size": 4294},
-      {"name": "GraphMLConverter", "size": 9800},
-      {"name": "IDataConverter", "size": 1314},
-      {"name": "JSONConverter", "size": 2220}
+      {"name": "TEAJA", "color": "5", "size": 2.36},
+      {"name": "NANDO'S", "color": "5", "size": 13.02}
      ]
     },
-    {"name": "DataField", "size": 1759},
-    {"name": "DataSchema", "size": 2165},
-    {"name": "DataSet", "size": 586},
-    {"name": "DataSource", "size": 3331},
-    {"name": "DataTable", "size": 772},
-    {"name": "DataUtil", "size": 3322}
+    {
+     "name": "MAR 06",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "BOSTON PIZZA", "color": "5", "size": 18.48},
+      {"name": "UMI SUSHI", "color": "5", "size": 7.6},
+      {"name": "ORIENTAL WOK", "color": "5", "size": 3.5}
+     ]
+    },
+    {
+     "name": "MAR 07",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "FAMOUS PLAYER", "color": "6", "size": 4.71}
+     ]
+    },
+    {
+     "name": "MAR 08",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "WOW CHICKEN", "color": "5", "size": 16.15}
+     ]
+    },
+    {
+     "name": "MAR 13",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "CHATIME", "color": "5", "size": 11.55},     
+      {"name": "SUPERSTORE", "color": "4", "size": 20.1},     
+      {"name": "E-TRANSFER", "color": "6", "size": 39.12}     
+    ]
+    },
+    {
+     "name": "MAR 14",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "WOW CHICKEN", "color": "5", "size": 4.6}     
+    ]
+    },
+    {
+     "name": "MAR 15",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "A&W", "color": "5", "size": 14.18},
+      {"name": "CHATIME", "color": "5", "size": 5.51}
+    ]
+    },
+    {
+     "name": "MAR 16",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "LA PREP", "color": "5", "size": 2.72}  
+    ]
+    },
+    {
+     "name": "MAR 17",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "GOOD EARTH", "color": "5", "size": 7.3},
+      {"name": "BUBBLEMANIA", "color": "5", "size": 14.88}  
+    ]
+    },
+    {
+     "name": "MAR 20",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "SUPERSTORE", "color": "4", "size": 19.99},
+      {"name": "T&T", "color": "4", "size": 3.56},
+      {"name": "BUBBLEMANIA", "color": "5", "size": 12.88}
+    ]
+    },
+    {
+     "name": "MAR 23",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "DENNY'S", "color": "5", "size": 4.83}
+    ]
+    },
+    {
+     "name": "MAR 27",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "HEXAGON", "color": "6", "size": 6.56}
+    ]
+    },
+    {
+     "name": "MAR 28",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "BUBBLEMANIA", "color": "5", "size": 12.07}    
+    ]
+    },
+    {
+     "name": "MAR 29",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "SUPERSTORE", "color": "4", "size": 25.61}    
+    ]
+    },
+    {
+     "name": "MAR 30",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "SUPERSTORE", "color": "4", "size": 51.99}    
+    ]
+    }
    ]
   },
   {
-   "name": "display",
+   "name": "APR 2017",
+   "color":13,
+   "collapse":1,
    "children": [
-    {"name": "DirtySprite", "size": 8833},
-    {"name": "LineSprite", "size": 1732},
-    {"name": "RectSprite", "size": 3623},
-    {"name": "TextSprite", "size": 10066}
+    {
+     "name": "APR 03",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "E-TRANSFER", "color": "6", "size": 10}
+     ]
+    },
+    {
+     "name": "APR 04",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "SUPERSTORE", "color": "4", "size": 25.91}
+     ]
+    },
+    {
+     "name": "APR 07",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "CHATIME", "color": "5", "size": 12.85}
+     ]
+    },
+    {
+     "name": "APR 10",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "A&W", "color": "5", "size": 9.4}
+     ]
+    },
+    {
+     "name": "APR 11",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "UMI SUSHI", "color": "5", "size": 7.6},     
+      {"name": "BAKE CHEF", "color": "5", "size": 2.65}    
+    ]
+    },
+    {
+     "name": "APR 12",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "LAZY MONKEY", "color": "5", "size": 5.51},
+      {"name": "CALGARY COURT", "color": "5", "size": 18.02}     
+    ]
+    },
+    {
+     "name": "APR 13",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "TAMARIND", "color": "5", "size": 15.6}
+    ]
+    },
+    {
+     "name": "APR 17",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "MCDONALD'S", "color": "5", "size": 8.39},  
+      {"name": "DENNY'S", "color": "5", "size": 5.78}, 
+      {"name": "JERUSALEM", "color": "5", "size": 14.65}  
+    ]
+    },
+    {
+     "name": "APR 19",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "NHA TRANG", "color": "5", "size": 11.5}  
+    ]
+    },
+    {
+     "name": "APR 20",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "MCDONALD'S", "color": "5", "size": 5.02}
+    ]
+    },
+    {
+     "name": "APR 21",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "WOW CHICKEN", "color": "5", "size": 13.84}
+    ]
+    },
+    {
+     "name": "APR 24",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "SENIORE'S PIZZA", "color": "5", "size": 6.44}
+    ]
+    },
+    {
+     "name": "APR 26",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "CACTUS CLUB", "color": "5", "size": 28.56}    
+    ]
+    },
+    {
+     "name": "APR 28",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "THAI EXPRESS", "color": "5", "size": 10.37},    
+      {"name": "PURDY'S", "color": "7", "size": 3.94}    
+    ]
+    },
+    {
+     "name": "APR 29",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "FOREVER 21", "color": "7", "size": 21.44},
+      {"name": "QUICKLY", "color": "5", "size": 5.78}        
+    ]
+    },
+    {
+     "name": "APR 30",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "STARBUCKS", "color": "5", "size": 4.99},
+      {"name": "GOOD EARTH", "color": "5", "size": 2.89},
+      {"name": "MCDONALD'S", "color": "5", "size": 3.45}                
+    ]
+    }
    ]
   },
   {
-   "name": "flex",
+   "name": "MAY 2017",
+   "color":14,
+   "collapse":1,
    "children": [
-    {"name": "FlareVis", "size": 4116}
+    {
+     "name": "MAY 01",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "VILLAGE ICE CREAM", "color": "5", "size": 11},
+      {"name": "QUICKLY", "color": "5", "size": 5.78}
+     ]
+    },
+    {
+     "name": "MAY 02",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "E-TRANSFER", "color": "6", "size": 16}
+     ]
+    },
+    {
+     "name": "MAY 08",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "FRESHII", "color": "5", "size": 8.18}
+     ]
+    },
+    {
+     "name": "MAY 11",
+     "color":3,
+     "collapse":1,
+     "children": [      
+      {"name": "LANDMARK", "color": "6", "size": 26.5},
+      {"name": "LANDMARK", "color": "6", "size": 14.05},
+      {"name": "SUPERSTORE", "color": "4", "size": 23.1}
+     ]
+    },
+    {
+     "name": "MAY 12",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "FAMOUS PLAYER", "color": "6", "size": 13.25}    
+    ]
+    },
+    {
+     "name": "MAY 15",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "QUICKLY", "color": "5", "size": 5.72},
+      {"name": "OLD NAVY", "color": "7", "size": 30.44},  
+      {"name": "H&M", "color": "7", "size": 57.74},
+      {"name": "BLUENOTES", "color": "7", "size": 15.11},
+      {"name": "KILKENNY", "color": "5", "size": 9.64}     
+
+    ]
+    },
+    {
+     "name": "MAY 17",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "JOEY BELL TOWER", "color": "6", "size": 23.39},
+      {"name": "MCDONALD'S", "color": "5", "size": 6.88},
+      {"name": "MANGOLAND", "color": "5", "size": 5.93}   
+    ]
+    },
+    {
+     "name": "MAY 23",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "T&T", "color": "4", "size": 12.94}  
+    ]
+    },
+    {
+     "name": "MAY 25",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "PAROS SOUVLA", "color": "5", "size": 4.75}  
+    ]
+    },
+    {
+     "name": "MAY 26",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "WOW CHICKEN", "color": "5", "size": 4.6},
+      {"name": "HEXAGON", "color": "6", "size": 9.19}
+    ]
+    },
+    {
+     "name": "MAY 29",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "BURGER 320", "color": "5", "size": 10}
+    ]
+    },
+    {
+     "name": "MAY 30",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "CHAPTERS", "color": "7", "size": 40.43},
+      {"name": "SUNNYSIDE ART STORE", "color": "7", "size": 9.69}
+    ]
+    },
+    {
+     "name": "MAY 31",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "ORANGE JULIUS", "color": "5", "size": 4.65}    
+    ]
+    }
    ]
   },
   {
-   "name": "physics",
-   "children": [
-    {"name": "DragForce", "size": 1082},
-    {"name": "GravityForce", "size": 1336},
-    {"name": "IForce", "size": 319},
-    {"name": "NBodyForce", "size": 10498},
-    {"name": "Particle", "size": 2822},
-    {"name": "Simulation", "size": 9983},
-    {"name": "Spring", "size": 2213},
-    {"name": "SpringForce", "size": 1681}
-   ]
-  },
-  {
-   "name": "query",
-   "children": [
-    {"name": "AggregateExpression", "size": 1616},
-    {"name": "And", "size": 1027},
-    {"name": "Arithmetic", "size": 3891},
-    {"name": "Average", "size": 891},
-    {"name": "BinaryExpression", "size": 2893},
-    {"name": "Comparison", "size": 5103},
-    {"name": "CompositeExpression", "size": 3677},
-    {"name": "Count", "size": 781},
-    {"name": "DateUtil", "size": 4141},
-    {"name": "Distinct", "size": 933},
-    {"name": "Expression", "size": 5130},
-    {"name": "ExpressionIterator", "size": 3617},
-    {"name": "Fn", "size": 3240},
-    {"name": "If", "size": 2732},
-    {"name": "IsA", "size": 2039},
-    {"name": "Literal", "size": 1214},
-    {"name": "Match", "size": 3748},
-    {"name": "Maximum", "size": 843},
-    {
-     "name": "methods",
-     "children": [
-      {"name": "add", "size": 593},
-      {"name": "and", "size": 330},
-      {"name": "average", "size": 287},
-      {"name": "count", "size": 277},
-      {"name": "distinct", "size": 292},
-      {"name": "div", "size": 595},
-      {"name": "eq", "size": 594},
-      {"name": "fn", "size": 460},
-      {"name": "gt", "size": 603},
-      {"name": "gte", "size": 625},
-      {"name": "iff", "size": 748},
-      {"name": "isa", "size": 461},
-      {"name": "lt", "size": 597},
-      {"name": "lte", "size": 619},
-      {"name": "max", "size": 283},
-      {"name": "min", "size": 283},
-      {"name": "mod", "size": 591},
-      {"name": "mul", "size": 603},
-      {"name": "neq", "size": 599},
-      {"name": "not", "size": 386},
-      {"name": "or", "size": 323},
-      {"name": "orderby", "size": 307},
-      {"name": "range", "size": 772},
-      {"name": "select", "size": 296},
-      {"name": "stddev", "size": 363},
-      {"name": "sub", "size": 600},
-      {"name": "sum", "size": 280},
-      {"name": "update", "size": 307},
-      {"name": "variance", "size": 335},
-      {"name": "where", "size": 299},
-      {"name": "xor", "size": 354},
-      {"name": "_", "size": 264}
-     ]
-    },
-    {"name": "Minimum", "size": 843},
-    {"name": "Not", "size": 1554},
-    {"name": "Or", "size": 970},
-    {"name": "Query", "size": 13896},
-    {"name": "Range", "size": 1594},
-    {"name": "StringUtil", "size": 4130},
-    {"name": "Sum", "size": 791},
-    {"name": "Variable", "size": 1124},
-    {"name": "Variance", "size": 1876},
-    {"name": "Xor", "size": 1101}
-   ]
-  },
-  {
-   "name": "scale",
-   "children": [
-    {"name": "IScaleMap", "size": 2105},
-    {"name": "LinearScale", "size": 1316},
-    {"name": "LogScale", "size": 3151},
-    {"name": "OrdinalScale", "size": 3770},
-    {"name": "QuantileScale", "size": 2435},
-    {"name": "QuantitativeScale", "size": 4839},
-    {"name": "RootScale", "size": 1756},
-    {"name": "Scale", "size": 4268},
-    {"name": "ScaleType", "size": 1821},
-    {"name": "TimeScale", "size": 5833}
-   ]
-  },
-  {
-   "name": "util",
-   "children": [
-    {"name": "Arrays", "size": 8258},
-    {"name": "Colors", "size": 10001},
-    {"name": "Dates", "size": 8217},
-    {"name": "Displays", "size": 12555},
-    {"name": "Filter", "size": 2324},
-    {"name": "Geometry", "size": 10993},
-    {
-     "name": "heap",
-     "children": [
-      {"name": "FibonacciHeap", "size": 9354},
-      {"name": "HeapNode", "size": 1233}
-     ]
-    },
-    {"name": "IEvaluable", "size": 335},
-    {"name": "IPredicate", "size": 383},
-    {"name": "IValueProxy", "size": 874},
-    {
-     "name": "math",
-     "children": [
-      {"name": "DenseMatrix", "size": 3165},
-      {"name": "IMatrix", "size": 2815},
-      {"name": "SparseMatrix", "size": 3366}
-     ]
-    },
-    {"name": "Maths", "size": 17705},
-    {"name": "Orientation", "size": 1486},
-    {
-     "name": "palette",
-     "children": [
-      {"name": "ColorPalette", "size": 6367},
-      {"name": "Palette", "size": 1229},
-      {"name": "ShapePalette", "size": 2059},
-      {"name": "SizePalette", "size": 2291}
-     ]
-    },
-    {"name": "Property", "size": 5559},
-    {"name": "Shapes", "size": 19118},
-    {"name": "Sort", "size": 6887},
-    {"name": "Stats", "size": 6557},
-    {"name": "Strings", "size": 22026}
-   ]
-  },
-  {
-   "name": "vis",
+   "name": "JUN 2017",
+   "color":15,
+   "collapse":1,
    "children": [
     {
-     "name": "axis",
+     "name": "JUN 01",
+     "color":3,
+     "collapse":1,
      "children": [
-      {"name": "Axes", "size": 1302},
-      {"name": "Axis", "size": 24593},
-      {"name": "AxisGridLine", "size": 652},
-      {"name": "AxisLabel", "size": 636},
-      {"name": "CartesianAxes", "size": 6703}
+      {"name": "NHA TRANG", "color": "5", "size": 28.88},
+      {"name": "CHATIME", "color": "5", "size": 5.25},
+      {"name": "COLOR ME MINE", "color": "6", "size": 36.75}
      ]
     },
     {
-     "name": "controls",
+     "name": "JUN 05",
+     "color":3,
+     "collapse":1,
      "children": [
-      {"name": "AnchorControl", "size": 2138},
-      {"name": "ClickControl", "size": 3824},
-      {"name": "Control", "size": 1353},
-      {"name": "ControlList", "size": 4665},
-      {"name": "DragControl", "size": 2649},
-      {"name": "ExpandControl", "size": 2832},
-      {"name": "HoverControl", "size": 4896},
-      {"name": "IControl", "size": 763},
-      {"name": "PanZoomControl", "size": 5222},
-      {"name": "SelectionControl", "size": 7862},
-      {"name": "TooltipControl", "size": 8435}
+      {"name": "A&W", "color": "5", "size": 7.34},
+      {"name": "OEB BREAKFAST", "color": "5", "size": 19.4},
+      {"name": "TAMARIND", "color": "5", "size": 8.67},
+      {"name": "WINNERS", "color": "7", "size": 22.02}
      ]
     },
     {
-     "name": "data",
+     "name": "JUN 06",
+     "color":3,
+     "collapse":1,
      "children": [
-      {"name": "Data", "size": 20544},
-      {"name": "DataList", "size": 19788},
-      {"name": "DataSprite", "size": 10349},
-      {"name": "EdgeSprite", "size": 3301},
-      {"name": "NodeSprite", "size": 19382},
-      {
-       "name": "render",
-       "children": [
-        {"name": "ArrowType", "size": 698},
-        {"name": "EdgeRenderer", "size": 5569},
-        {"name": "IRenderer", "size": 353},
-        {"name": "ShapeRenderer", "size": 2247}
-       ]
-      },
-      {"name": "ScaleBinding", "size": 11275},
-      {"name": "Tree", "size": 7147},
-      {"name": "TreeBuilder", "size": 9930}
+      {"name": "LANDMARK", "color": "6", "size": 8.5}
      ]
     },
     {
-     "name": "events",
-     "children": [
-      {"name": "DataEvent", "size": 2313},
-      {"name": "SelectionEvent", "size": 1880},
-      {"name": "TooltipEvent", "size": 1701},
-      {"name": "VisualizationEvent", "size": 1117}
+     "name": "JUN 08",
+     "color":3,
+     "collapse":1,
+     "children": [      
+      {"name": "A&W", "color": "5", "size": 12.59}
      ]
     },
     {
-     "name": "legend",
+     "name": "JUN 12",
+     "color":3,
+     "collapse":1,
      "children": [
-      {"name": "Legend", "size": 20859},
-      {"name": "LegendItem", "size": 4614},
-      {"name": "LegendRange", "size": 10530}
-     ]
+      {"name": "CHATIME", "color": "5", "size": 5.57},
+      {"name": "H&M", "color": "7", "size": 15.74},
+      {"name": "NEW YORK FRIES", "color": "5", "size": 4.61}    
+    ]
     },
     {
-     "name": "operator",
+     "name": "JUN 14",
+     "color":3,
+     "collapse":1,
      "children": [
-      {
-       "name": "distortion",
-       "children": [
-        {"name": "BifocalDistortion", "size": 4461},
-        {"name": "Distortion", "size": 6314},
-        {"name": "FisheyeDistortion", "size": 3444}
-       ]
-      },
-      {
-       "name": "encoder",
-       "children": [
-        {"name": "ColorEncoder", "size": 3179},
-        {"name": "Encoder", "size": 4060},
-        {"name": "PropertyEncoder", "size": 4138},
-        {"name": "ShapeEncoder", "size": 1690},
-        {"name": "SizeEncoder", "size": 1830}
-       ]
-      },
-      {
-       "name": "filter",
-       "children": [
-        {"name": "FisheyeTreeFilter", "size": 5219},
-        {"name": "GraphDistanceFilter", "size": 3165},
-        {"name": "VisibilityFilter", "size": 3509}
-       ]
-      },
-      {"name": "IOperator", "size": 1286},
-      {
-       "name": "label",
-       "children": [
-        {"name": "Labeler", "size": 9956},
-        {"name": "RadialLabeler", "size": 3899},
-        {"name": "StackedAreaLabeler", "size": 3202}
-       ]
-      },
-      {
-       "name": "layout",
-       "children": [
-        {"name": "AxisLayout", "size": 6725},
-        {"name": "BundledEdgeRouter", "size": 3727},
-        {"name": "CircleLayout", "size": 9317},
-        {"name": "CirclePackingLayout", "size": 12003},
-        {"name": "DendrogramLayout", "size": 4853},
-        {"name": "ForceDirectedLayout", "size": 8411},
-        {"name": "IcicleTreeLayout", "size": 4864},
-        {"name": "IndentedTreeLayout", "size": 3174},
-        {"name": "Layout", "size": 7881},
-        {"name": "NodeLinkTreeLayout", "size": 12870},
-        {"name": "PieLayout", "size": 2728},
-        {"name": "RadialTreeLayout", "size": 12348},
-        {"name": "RandomLayout", "size": 870},
-        {"name": "StackedAreaLayout", "size": 9121},
-        {"name": "TreeMapLayout", "size": 9191}
-       ]
-      },
-      {"name": "Operator", "size": 2490},
-      {"name": "OperatorList", "size": 5248},
-      {"name": "OperatorSequence", "size": 4190},
-      {"name": "OperatorSwitch", "size": 2581},
-      {"name": "SortOperator", "size": 2023}
-     ]
+      {"name": "CHATIME", "color": "5", "size": 11.29}     
+
+    ]
     },
-    {"name": "Visualization", "size": 16540}
+    {
+     "name": "JUN 15",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "CALGARY ZOO", "color": "6", "size": 26.2},
+      {"name": "MARBLE SLAB", "color": "5", "size": 5.87}      
+    ]
+    },
+    {
+     "name": "JUN 16",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "SUSHI BBQ INN", "color": "5", "size": 29.25}  
+    ]
+    },
+    {
+     "name": "JUN 19",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "CHICK-FIL-A", "color": "5", "size": 11.06}  
+    ]
+    },
+    {
+     "name": "JUN 20",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "DENNY'S", "color": "5", "size": 16.2}
+    ]
+    },
+    {
+     "name": "JUN 26",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "CHATIME", "color": "5", "size": 13.38}
+    ]
+    },
+    {
+     "name": "JUN 28",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "MCDONALD'S", "color": "5", "size": 32.35}
+    ]
+    },
+    {
+     "name": "JUN 29",
+     "color":3,
+     "collapse":1,
+     "children": [
+      {"name": "SENIORE'S PIZZA", "color": "5", "size": 11.23},
+      {"name": "MCDONALD'S", "color": "5", "size": 8.88},    
+      {"name": "SUPERSTORE", "color": "4", "size": 32.3}    
+    ]
+    },
+    {
+     "name": "JUN 30",
+     "color":3,
+     "collapse":1,
+     "children": [    
+      {"name": "QUICKLY", "color": "5", "size": 5.72}    
+    ]
+    }
    ]
   }
  ]

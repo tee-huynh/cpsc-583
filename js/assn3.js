@@ -1,3 +1,8 @@
+// CPSC583 ASSIGNMENT 3
+// TINA HUYNH
+// 10131151
+// REFER TO README.TXT FOR CREDITS
+
 var number = 0;
 
 var data=[['EatingOut', 'JAN 2017', 1.56],
